@@ -25,14 +25,13 @@ func move_arc(delta):
 	
 func move_straight(delta):
 	if Input.is_action_pressed("Move_L"):
-		set_dir(-0.05)
+		set_dir(-1)
 		rotation = rotation+(rotation_direction*rotation_speed*delta)
 	if Input.is_action_pressed("Move_R"):
-		set_dir(0.05)
+		set_dir(1)
 		rotation = rotation+(rotation_direction*rotation_speed*delta)
 	
 	var velocity = (Vector2.UP.rotated(rotation) * speed*delta) 
-	rotation = rotation+(rotation_direction*rotation_speed*delta)
 	position += velocity
 
 
