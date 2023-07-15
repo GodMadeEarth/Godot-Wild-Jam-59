@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var speed:int = 100
-var rotation_speed:float = PI/3
+var rotation_speed:float = PI/2
 var rotation_direction:= 0.0 : set = set_dir, get = get_dir
 
 # Called when the node enters the scene tree for the first time.
@@ -18,6 +18,7 @@ func move(delta):
 		set_dir(-0.05)
 	if Input.is_action_pressed("Move_R"):
 		set_dir(0.05)
+
 	
 	var velocity = (Vector2.UP.rotated(rotation) * speed*delta) 
 	rotation = rotation+(rotation_direction*rotation_speed*delta)

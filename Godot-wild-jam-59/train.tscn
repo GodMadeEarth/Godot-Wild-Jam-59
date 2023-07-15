@@ -31,7 +31,7 @@ disable_collision = false
 [node name="Train Car" type="RigidBody2D" parent="."]
 position = Vector2(0.000144958, 40)
 center_of_mass_mode = 1
-linear_damp = 4.5
+linear_damp = 5.0
 metadata/_edit_group_ = true
 
 [node name="Polygon2D" type="Polygon2D" parent="Train Car"]
@@ -52,7 +52,7 @@ disable_collision = false
 [node name="Train Car2" type="RigidBody2D" parent="."]
 position = Vector2(0.000396729, 108)
 center_of_mass_mode = 1
-linear_damp = 4.5
+linear_damp = 5.0
 metadata/_edit_group_ = true
 
 [node name="Polygon2D" type="Polygon2D" parent="Train Car2"]
@@ -74,7 +74,7 @@ disable_collision = false
 position = Vector2(0.000640869, 176)
 center_of_mass_mode = 1
 gravity_scale = 0.0
-linear_damp = 4.5
+linear_damp = 5.0
 metadata/_edit_group_ = true
 
 [node name="Polygon2D" type="Polygon2D" parent="Train Car3"]
