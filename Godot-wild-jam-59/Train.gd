@@ -11,14 +11,25 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	move(delta)
-
-func move(delta):
+	move_straight(delta)
+func move_arc(delta):
 	if Input.is_action_pressed("Move_L"):
 		set_dir(-0.05)
 	if Input.is_action_pressed("Move_R"):
 		set_dir(0.05)
 
+	
+	var velocity = (Vector2.UP.rotated(rotation) * speed*delta) 
+	rotation = rotation+(rotation_direction*rotation_speed*delta)
+	position += velocity
+	
+func move_straight(delta):
+	if Input.is_action_pressed("Move_L"):
+		set_dir(-0.05)
+		rotation = rotation+(rotation_direction*rotation_speed*delta)
+	if Input.is_action_pressed("Move_R"):
+		set_dir(0.05)
+		rotation = rotation+(rotation_direction*rotation_speed*delta)
 	
 	var velocity = (Vector2.UP.rotated(rotation) * speed*delta) 
 	rotation = rotation+(rotation_direction*rotation_speed*delta)
