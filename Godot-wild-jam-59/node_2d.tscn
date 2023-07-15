@@ -1,25 +1,74 @@
-[gd_scene format=3 uid="uid://vjoupg6f5jg0"]
+[gd_scene load_steps=2 format=3 uid="uid://vjoupg6f5jg0"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Script" path="res://Train.gd" id="1_42oq3"]
+
+[node name="Train" type="Node2D"]
+position = Vector2(288, 80)
+rotation = 1.5708
+
+[node name="Train" type="RigidBody2D" parent="."]
+position = Vector2(-3.05176e-05, 0)
+gravity_scale = 0.0
+script = ExtResource("1_42oq3")
+
+[node name="Polygon2D" type="Polygon2D" parent="Train"]
+position = Vector2(-8, -8)
+polygon = PackedVector2Array(8, -48, 0, -40, -8, -24, -8, 16, 24, 16, 24, -24, 15.8632, -40.1368)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Train"]
+position = Vector2(-8, -8)
+polygon = PackedVector2Array(0, -40, -8, -24, -8, 16, 24, 16, 24, -24, 16, -40, 8, -48)
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
-position = Vector2(0, 18)
-node_a = NodePath("../RigidBody2D")
-node_b = NodePath("../RigidBody2D2")
+position = Vector2(-3.05176e-05, 16)
+node_a = NodePath("../Train")
+node_b = NodePath("../Train Car")
+disable_collision = false
 
-[node name="RigidBody2D2" type="RigidBody2D" parent="."]
-position = Vector2(0, 28)
+[node name="Train Car" type="RigidBody2D" parent="."]
+position = Vector2(-3.05176e-05, 48)
+gravity_scale = 0.0
 
-[node name="Polygon2D" type="Polygon2D" parent="RigidBody2D2"]
-polygon = PackedVector2Array(-8, -8, -8, 16, 8, 16, 8, -8)
+[node name="Polygon2D" type="Polygon2D" parent="Train Car"]
+position = Vector2(-8.00003, -16)
+polygon = PackedVector2Array(-8, -8, -8, 48, 24, 48, 24, -8)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D2"]
-polygon = PackedVector2Array(-8, -8, -8, 16, 8, 16, 8, -8)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Train Car"]
+position = Vector2(-8.00003, -16)
+polygon = PackedVector2Array(-8, -8, -8, 48, 24, 48, 24, -8)
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2(-3.05176e-05, 88)
+node_a = NodePath("../Train Car")
+node_b = NodePath("../Train Car2")
+disable_collision = false
 
-[node name="Polygon2D" type="Polygon2D" parent="RigidBody2D"]
-polygon = PackedVector2Array(0, -16, -8, -8, -8, 16, 8, 16, 8, -8)
+[node name="Train Car2" type="RigidBody2D" parent="."]
+position = Vector2(-3.05176e-05, 120)
+gravity_scale = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
-polygon = PackedVector2Array(0, -16, -8, -8, -8, 16, 8, 16, 8, -8)
+[node name="Polygon2D" type="Polygon2D" parent="Train Car2"]
+position = Vector2(-8, -16)
+polygon = PackedVector2Array(-8, -8, -8, 48, 24, 48, 24, -8)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Train Car2"]
+position = Vector2(-8, -16)
+polygon = PackedVector2Array(-8, -8, -8, 48, 24, 48, 24, -8)
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="."]
+position = Vector2(-3.05176e-05, 160)
+node_a = NodePath("../Train Car2")
+node_b = NodePath("../Train Car3")
+disable_collision = false
+
+[node name="Train Car3" type="RigidBody2D" parent="."]
+position = Vector2(-3.05176e-05, 192)
+gravity_scale = 0.0
+
+[node name="Polygon2D" type="Polygon2D" parent="Train Car3"]
+position = Vector2(-8, -16)
+polygon = PackedVector2Array(-8, -8, -8, 48, 24, 48, 24, -8)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Train Car3"]
+position = Vector2(-8, -16)
+polygon = PackedVector2Array(-8, -8, -8, 48, 24, 48, 24, -8)
