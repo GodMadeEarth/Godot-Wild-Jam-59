@@ -65,5 +65,3 @@ color = Color(0.0784314, 0.0784314, 0.0784314, 1)
 
 [node name="Train" parent="." instance=ExtResource("1_ru2op")]
 position = Vector2(330, 464)
-
-[node name="Camera2D" type="Camera2D" parent="Train"]
