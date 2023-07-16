@@ -1,25 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6qeuugvibvgr"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_38t3f"]
-rough = true
-absorbent = true
+[gd_scene format=3 uid="uid://b6qeuugvibvgr"]
 
 [node name="Train Car" type="RigidBody2D"]
 center_of_mass_mode = 1
-physics_material_override = SubResource("PhysicsMaterial_38t3f")
 gravity_scale = 0.0
-linear_damp = 5.0
+linear_damp = 10.0
 metadata/_edit_group_ = true
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(-6.4, -15.2)
-polygon = PackedVector2Array(-9.6, -16.8, -9.6, 47.2, 22.4, 47.2, 22.4, -16.8)
+position = Vector2(-8.00003, 8)
+polygon = PackedVector2Array(-8, -8, -8, 48, 24, 48, 24, -8)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-6.4, -15.2)
-polygon = PackedVector2Array(-9.6, -16.8, -9.6, 44.2, 6.3092, 47.2, 22.4, 44.2, 22.4, -16.8)
+position = Vector2(-8.00003, 8)
+polygon = PackedVector2Array(-8, -8, -8, 48, 24, 48, 24, -8)
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
-position = Vector2(0, 40)
+position = Vector2(0, 62)
 node_a = NodePath("..")
 disable_collision = false

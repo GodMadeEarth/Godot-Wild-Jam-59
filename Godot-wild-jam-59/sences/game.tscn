@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://4icy85h2kksj"]
 
 [ext_resource type="PackedScene" uid="uid://vjoupg6f5jg0" path="res://sences/Trains/train.tscn" id="1_f5mae"]
-[ext_resource type="PackedScene" uid="uid://de02sj6s68c8a" path="res://train_station.tscn" id="2_k1mfv"]
+[ext_resource type="PackedScene" uid="uid://mk8iuk8ytsrl" path="res://sences/train_station.tscn" id="2_k1mfv"]
 
 [node name="game" type="Node2D"]
 

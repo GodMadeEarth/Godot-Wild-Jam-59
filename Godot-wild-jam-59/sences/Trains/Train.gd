@@ -4,6 +4,7 @@ extends CharacterBody2D
 var rotation_speed:float = PI/1.5
 var rotation_direction:= 0.0 : set = set_dir, get = get_dir
 @onready var last_cart = self
+@export var cart_spacing = 32
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -20,8 +21,8 @@ func _physics_process(delta):
 		print("Cart removed")
 		var rand_index = randi_range(1,get_parent().get_children().size()-1)
 		remove_cart(1)
-		if rand_index > 0 and get_parent().get_children().size() > 1:
-			remove_cart(rand_index)
+#		if rand_index > 0 and get_parent().get_children().size() > 1:
+#			remove_cart(rand_index)
 
 func move_arc(delta):
 	if Input.is_action_pressed("Move_L"):
@@ -49,9 +50,8 @@ func move_straight(delta):
 func add_cart():
 	var cart = train_cart.instantiate()
 	var last_cart_joint = last_cart.get_node("PinJoint2D")
-
 	get_parent().add_child(cart)
-	cart.global_position = last_cart_joint.global_position + last_cart.global_position.direction_to(last_cart_joint.global_position) * 32
+	cart.global_position = last_cart_joint.global_position + last_cart.global_position.direction_to(last_cart_joint.global_position) * cart_spacing
 	cart.rotation = last_cart.rotation
 	last_cart_joint.node_b = cart.get_path()
 	print(last_cart.rotation)
