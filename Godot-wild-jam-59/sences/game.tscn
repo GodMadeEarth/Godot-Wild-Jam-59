@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://4icy85h2kksj"]
 
-[ext_resource type="PackedScene" uid="uid://vjoupg6f5jg0" path="res://train.tscn" id="1_ru2op"]
+[ext_resource type="PackedScene" uid="uid://vjoupg6f5jg0" path="res://sences/Trains/train.tscn" id="1_f5mae"]
 
 [node name="game" type="Node2D"]
 
@@ -63,5 +63,5 @@ offset_right = 2004.0
 offset_bottom = 1369.0
 color = Color(0.0784314, 0.0784314, 0.0784314, 1)
 
-[node name="Train" parent="." instance=ExtResource("1_ru2op")]
-position = Vector2(330, 464)
+[node name="Train" parent="." instance=ExtResource("1_f5mae")]
+position = Vector2(570, 910)
