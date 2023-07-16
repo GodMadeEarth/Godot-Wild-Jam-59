@@ -7,14 +7,13 @@ linear_damp = 10.0
 metadata/_edit_group_ = true
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(-8.00003, 8)
-polygon = PackedVector2Array(-8, -8, -8, 48, 24, 48, 24, -8)
+position = Vector2(-8, -16)
+polygon = PackedVector2Array(-8, -16, -8, 48, 24, 48, 24, -16)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-8.00003, 8)
-polygon = PackedVector2Array(-8, -8, -8, 48, 24, 48, 24, -8)
+position = Vector2(-8, -16)
+polygon = PackedVector2Array(-8, -16, -8, 48, 24, 48, 24, -16)
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
-position = Vector2(0, 62)
+position = Vector2(0, 40)
 node_a = NodePath("..")
-disable_collision = false

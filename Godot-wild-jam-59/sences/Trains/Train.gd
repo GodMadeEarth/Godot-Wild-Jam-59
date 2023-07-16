@@ -6,7 +6,8 @@ class_name Train_Head
 var rotation_speed:float = PI/1.5
 var rotation_direction:= 0.0 : set = set_dir, get = get_dir
 @onready var last_cart = self
-@export var cart_spacing = 32
+@export var cart_spacing = 30
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
