@@ -1,9 +1,9 @@
 extends Node2D
-@onready var train_head:Train_Head = $"Train head"
+@onready var train_head = $"Train head"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for i in range(2):
+	for i in range(4):
 		train_head.add_cart()
 	pass # Replace with function body.
 
