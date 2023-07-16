@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://4icy85h2kksj"]
+[gd_scene load_steps=4 format=3 uid="uid://4icy85h2kksj"]
 
-[ext_resource type="PackedScene" uid="uid://vjoupg6f5jg0" path="res://sences/Trains/train.tscn" id="1_f5mae"]
+[ext_resource type="PackedScene" uid="uid://vjoupg6f5jg0" path="res://sences/Trains/Player/train.tscn" id="1_f5mae"]
 [ext_resource type="PackedScene" uid="uid://mk8iuk8ytsrl" path="res://sences/train_station.tscn" id="2_k1mfv"]
+[ext_resource type="PackedScene" uid="uid://bd280oct5pf2f" path="res://sences/Trains/enemies/Enemy Train.tscn" id="3_1icv6"]
 
 [node name="game" type="Node2D"]
 
@@ -64,7 +65,7 @@ offset_right = 2004.0
 offset_bottom = 1369.0
 color = Color(0.0784314, 0.0784314, 0.0784314, 1)
 
-[node name="Train" parent="." instance=ExtResource("1_f5mae")]
+[node name="Player Train" parent="." instance=ExtResource("1_f5mae")]
 position = Vector2(570, 910)
 
 [node name="Train Station" parent="." instance=ExtResource("2_k1mfv")]
@@ -81,3 +82,6 @@ rotation = -1.5708
 [node name="Train Station4" parent="." instance=ExtResource("2_k1mfv")]
 position = Vector2(2000, 488)
 rotation = 1.5708
+
+[node name="Enemy Train" parent="." instance=ExtResource("3_1icv6")]
+position = Vector2(1019, 677)

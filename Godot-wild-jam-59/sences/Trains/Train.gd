@@ -1,4 +1,6 @@
 extends CharacterBody2D
+class_name Train_Head
+
 @onready var train_cart = preload("res://sences/Trains/train_cart.tscn")
 @export var speed:int = 100
 var rotation_speed:float = PI/1.5
@@ -14,35 +16,14 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	move_straight(delta)
-	if Input.is_action_just_pressed("ui_down"):
-		print("made cart")
-		add_cart()
-	if Input.is_action_just_pressed("ui_up"):
-		print("Cart removed")
-		var rand_index = randi_range(1,get_parent().get_children().size()-1)
-		remove_cart(1)
-#		if rand_index > 0 and get_parent().get_children().size() > 1:
-#			remove_cart(rand_index)
-
-func move_arc(delta):
-	if Input.is_action_pressed("Move_L"):
-		set_dir(-0.05)
-	if Input.is_action_pressed("Move_R"):
-		set_dir(0.05)
-
 	
+func move_arc(delta):
+
 	var velocity = (Vector2.UP.rotated(rotation) * speed*delta) 
 	rotation = rotation+(rotation_direction*rotation_speed*delta)
 	position += velocity
 	
 func move_straight(delta):
-	if Input.is_action_pressed("Move_L"):
-		set_dir(-1)
-		rotation = rotation+(rotation_direction*rotation_speed*delta)
-	if Input.is_action_pressed("Move_R"):
-		set_dir(1)
-		rotation = rotation+(rotation_direction*rotation_speed*delta)
-	
 	velocity = (Vector2.UP.rotated(rotation) * speed) 
 	
 	move_and_slide()
