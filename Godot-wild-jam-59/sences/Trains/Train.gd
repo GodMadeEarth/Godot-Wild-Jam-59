@@ -1,7 +1,7 @@
-extends Node2D
+extends CharacterBody2D
 @onready var train_cart = preload("res://sences/Trains/train_cart.tscn")
 @export var speed:int = 100
-var rotation_speed:float = PI*1.5
+var rotation_speed:float = PI/1.5
 var rotation_direction:= 0.0 : set = set_dir, get = get_dir
 @onready var last_cart = self
 # Called when the node enters the scene tree for the first time.
@@ -42,15 +42,16 @@ func move_straight(delta):
 		set_dir(1)
 		rotation = rotation+(rotation_direction*rotation_speed*delta)
 	
-	var velocity = (Vector2.UP.rotated(rotation) * speed*delta) 
-	position += velocity
+	velocity = (Vector2.UP.rotated(rotation) * speed) 
+	
+	move_and_slide()
 
 func add_cart():
 	var cart = train_cart.instantiate()
 	var last_cart_joint = last_cart.get_node("PinJoint2D")
 
 	get_parent().add_child(cart)
-	cart.global_position = last_cart_joint.global_position
+	cart.global_position = last_cart_joint.global_position + last_cart.global_position.direction_to(last_cart_joint.global_position) * 32
 	cart.rotation = last_cart.rotation
 	last_cart_joint.node_b = cart.get_path()
 	print(last_cart.rotation)

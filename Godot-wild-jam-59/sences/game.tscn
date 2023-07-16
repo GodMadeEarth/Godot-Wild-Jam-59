@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://4icy85h2kksj"]
+[gd_scene load_steps=3 format=3 uid="uid://4icy85h2kksj"]
 
 [ext_resource type="PackedScene" uid="uid://vjoupg6f5jg0" path="res://sences/Trains/train.tscn" id="1_f5mae"]
+[ext_resource type="PackedScene" uid="uid://de02sj6s68c8a" path="res://train_station.tscn" id="2_k1mfv"]
 
 [node name="game" type="Node2D"]
 
@@ -65,3 +66,18 @@ color = Color(0.0784314, 0.0784314, 0.0784314, 1)
 
 [node name="Train" parent="." instance=ExtResource("1_f5mae")]
 position = Vector2(570, 910)
+
+[node name="Train Station" parent="." instance=ExtResource("2_k1mfv")]
+position = Vector2(1168, 1368)
+rotation = 3.14159
+
+[node name="Train Station2" parent="." instance=ExtResource("2_k1mfv")]
+position = Vector2(792, 8)
+
+[node name="Train Station3" parent="." instance=ExtResource("2_k1mfv")]
+position = Vector2(0, 864)
+rotation = -1.5708
+
+[node name="Train Station4" parent="." instance=ExtResource("2_k1mfv")]
+position = Vector2(2000, 488)
+rotation = 1.5708
