@@ -16,6 +16,12 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_down"):
 		print("made cart")
 		add_cart()
+	if Input.is_action_just_pressed("ui_up"):
+		print("Cart removed")
+		var rand_index = randi_range(1,get_parent().get_children().size()-1)
+		remove_cart(1)
+		if rand_index > 0 and get_parent().get_children().size() > 1:
+			remove_cart(rand_index)
 
 func move_arc(delta):
 	if Input.is_action_pressed("Move_L"):
@@ -39,7 +45,6 @@ func move_straight(delta):
 	var velocity = (Vector2.UP.rotated(rotation) * speed*delta) 
 	position += velocity
 
-
 func add_cart():
 	var cart = train_cart.instantiate()
 	var last_cart_joint = last_cart.get_node("PinJoint2D")
@@ -52,6 +57,20 @@ func add_cart():
 	last_cart = cart
 	
 	print(last_cart.rotation)
+
+# index 0 can never be accessed since it's the head.
+func remove_cart(index:int):
+	if get_parent().get_children().size()-1 <= index or index <= 0:
+		print("Invalid index")
+		print(get_parent().get_children().size() )
+		return 
+	var new_head_cart = get_parent().get_children()[index-1]
+	new_head_cart.get_node("PinJoint2D").node_b = ""
+	last_cart = new_head_cart
+		
+
+	pass
+	
 
 func set_dir(ajustment:float):
 	rotation_direction+=ajustment
