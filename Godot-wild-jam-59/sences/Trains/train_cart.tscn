@@ -1,13 +1,12 @@
 [gd_scene load_steps=2 format=3 uid="uid://b6qeuugvibvgr"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_iied7"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_38t3f"]
 rough = true
-bounce = 0.8
+absorbent = true
 
 [node name="Train Car" type="RigidBody2D"]
-mass = 1000.0
 center_of_mass_mode = 1
-physics_material_override = SubResource("PhysicsMaterial_iied7")
+physics_material_override = SubResource("PhysicsMaterial_38t3f")
 gravity_scale = 0.0
 linear_damp = 5.0
 metadata/_edit_group_ = true
@@ -18,7 +17,7 @@ polygon = PackedVector2Array(-9.6, -16.8, -9.6, 47.2, 22.4, 47.2, 22.4, -16.8)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-6.4, -15.2)
-polygon = PackedVector2Array(-9.6, -16.8, -9.6, 47.2, 22.4, 47.2, 22.4, -16.8)
+polygon = PackedVector2Array(-9.6, -16.8, -9.6, 44.2, 6.3092, 47.2, 22.4, 44.2, 22.4, -16.8)
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
 position = Vector2(0, 40)

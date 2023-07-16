@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 @onready var train_cart = preload("res://sences/Trains/train_cart.tscn")
 @export var speed:int = 100
 var rotation_speed:float = PI/1.5
@@ -36,8 +36,9 @@ func move_straight(delta):
 		set_dir(1)
 		rotation = rotation+(rotation_direction*rotation_speed*delta)
 	
-	var velocity = (Vector2.UP.rotated(rotation) * speed*delta) 
-	position += velocity
+	velocity = (Vector2.UP.rotated(rotation) * speed) 
+	
+	move_and_slide()
 
 
 func add_cart():
