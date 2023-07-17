@@ -1,13 +1,20 @@
-[gd_scene format=3 uid="uid://b6qeuugvibvgr"]
+[gd_scene load_steps=2 format=3 uid="uid://b6qeuugvibvgr"]
+
+[ext_resource type="Texture2D" uid="uid://bvjdkjcitjnjl" path="res://assets/traindemo4.png" id="1_ilhgv"]
 
 [node name="Train Car" type="RigidBody2D"]
 center_of_mass_mode = 1
 gravity_scale = 0.0
 linear_damp = 10.0
-metadata/_edit_group_ = true
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 position = Vector2(-8.00003, 8)
+polygon = PackedVector2Array(-8, -8, -8, 48, 24, 48, 24, -8)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(-2, 54.9796)
+scale = Vector2(0.25, 0.479592)
+color = Color(0.658824, 0.266667, 0.0235294, 1)
 polygon = PackedVector2Array(-8, -8, -8, 48, 24, 48, 24, -8)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
@@ -18,3 +25,11 @@ polygon = PackedVector2Array(-8, -8, -8, 48, 24, 48, 24, -8)
 position = Vector2(0, 62)
 node_a = NodePath("..")
 disable_collision = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1.54972e-06, 28)
+scale = Vector2(2.25, 3.5)
+texture = ExtResource("1_ilhgv")
+region_enabled = true
+region_rect = Rect2(64, 32, 16, 16)
