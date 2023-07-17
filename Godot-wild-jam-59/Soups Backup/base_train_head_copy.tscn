@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://uvh015smr05p"]
+[gd_scene load_steps=3 format=3 uid="uid://h0jp58og0367"]
 
-[ext_resource type="Script" path="res://sences/Trains/Train.gd" id="1_6jy5h"]
+[ext_resource type="Script" path="res://sences/Trains/Train.gd" id="1_0je0g"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u0kt4"]
 rough = true
@@ -10,7 +10,7 @@ absorbent = true
 [node name="Train head" type="CharacterBody2D"]
 position = Vector2(-2.89679e-05, 0)
 motion_mode = 1
-script = ExtResource("1_6jy5h")
+script = ExtResource("1_0je0g")
 speed = 500
 cart_spacing = 20
 metadata/_edit_group_ = true

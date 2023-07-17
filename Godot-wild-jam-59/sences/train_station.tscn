@@ -16,11 +16,11 @@ polygon = PackedVector2Array(0, 0, 192, 0, 192, 8, 184, 24, 176, 32, 16, 32, 8, 
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(0, 4.8)
-polygon = PackedVector2Array(16, 64, 24, 72, 48, 80, 144, 80, 168, 72, 176, 64)
+polygon = PackedVector2Array(16, 67.2, 16, 71.2, 24, 72, 48, 80, 144, 80, 168, 72, 176, 67.2, 172, 63.2, 20, 63.2)
 
 [node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(0, 0, 192, 0, 192, 8, 184, 24, 176, 32, 16, 32, 8, 24, 0, 8)
 
 [node name="Polygon2D2" type="Polygon2D" parent="StaticBody2D"]
 position = Vector2(0, 4.8)
-polygon = PackedVector2Array(16, 64, 24, 72, 48, 80, 144, 80, 168, 72, 176, 64)
+polygon = PackedVector2Array(16, 71.2, 24, 72, 48, 80, 144, 80, 168, 72, 176, 71.2, 176, 67.2, 172, 63.2, 20, 63.2, 16, 67.0899)

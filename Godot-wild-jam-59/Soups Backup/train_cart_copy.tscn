@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6qeuugvibvgr"]
+[gd_scene load_steps=4 format=3 uid="uid://c3dbseie0257w"]
 
-[ext_resource type="Texture2D" uid="uid://bvjdkjcitjnjl" path="res://assets/traindemo4.png" id="1_ilhgv"]
-[ext_resource type="Script" path="res://sences/Trains/Passengers.gd" id="2_okm1e"]
+[ext_resource type="Texture2D" uid="uid://bvjdkjcitjnjl" path="res://assets/traindemo4.png" id="1_7i1to"]
+[ext_resource type="Script" path="res://sences/Trains/Passengers.gd" id="2_dd8wm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_458mf"]
 size = Vector2(22, 46)
@@ -29,13 +29,13 @@ node_a = NodePath("..")
 texture_filter = 1
 position = Vector2(-1.78814e-07, 0)
 scale = Vector2(2.125, 3.5)
-texture = ExtResource("1_ilhgv")
+texture = ExtResource("1_7i1to")
 region_enabled = true
 region_rect = Rect2(64, 32, 16, 16)
 
 [node name="Passengers" type="Node2D" parent="."]
 position = Vector2(1.60003, -23.2)
-script = ExtResource("2_okm1e")
+script = ExtResource("2_dd8wm")
 
 [node name="Polygon2D" type="Polygon2D" parent="Passengers"]
 visible = false

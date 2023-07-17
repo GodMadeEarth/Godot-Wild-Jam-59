@@ -3,7 +3,7 @@ class_name Train_Head
 
 @onready var train_cart = preload("res://sences/Trains/train_cart.tscn")
 @export var speed:int = 100
-var rotation_speed:float = PI*1.5
+var rotation_speed:float = PI/1.5
 var rotation_direction:= 0.0 : set = set_dir, get = get_dir
 @onready var last_cart = self
 @export var cart_spacing = 32
