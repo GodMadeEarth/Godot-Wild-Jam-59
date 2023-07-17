@@ -7,11 +7,20 @@ var rotation_speed:float = PI*1.5
 var rotation_direction:= 0.0 : set = set_dir, get = get_dir
 @onready var last_cart = self
 @export var cart_spacing = 32
+
+
+var can_dash = true
+var is_dashing = false
+@export var dash_duration = 0.5
+@export var dash_cooldown = 2
+@export var dash_speed = 900
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
 	pass # Replace with function body.
 
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	move_straight(delta)
 	
@@ -19,23 +28,13 @@ func move_arc(delta):
 
 	var velocity = (Vector2.UP.rotated(rotation) * speed*delta) 
 	rotation = rotation+(rotation_direction*rotation_speed*delta)
-#	position += velocity
-	move_and_slide()
+	position += velocity
 	
 func move_straight(delta):
 	velocity = (Vector2.UP.rotated(rotation) * (speed if !is_dashing else dash_speed)) 
 	
 	move_and_slide()
 
-func dash():
-	if can_dash and !is_dashing:
-		print("DASHING!!!")
-		can_dash = false
-		is_dashing = true
-		$dash_timer.start(dash_duration)
-		await get_tree().create_timer(dash_cooldown).timeout
-		can_dash = true
-	pass
 func add_cart():
 	var cart = train_cart.instantiate()
 	var last_cart_joint = last_cart.get_node("PinJoint2D")
@@ -59,7 +58,17 @@ func remove_cart(index:int):
 	last_cart = new_head_cart
 		
 
-	pass	
+	pass
+	
+func dash():
+	if can_dash and !is_dashing:
+		print("DASHING!!!")
+		can_dash = false
+		is_dashing = true
+		$dash_timer.start(dash_duration)
+		await get_tree().create_timer(dash_cooldown).timeout
+		can_dash = true
+	pass
 
 func set_dir(ajustment:float):
 	rotation_direction+=ajustment
@@ -67,7 +76,7 @@ func set_dir(ajustment:float):
 		rotation_direction = 1
 	elif rotation_direction+ajustment < -1:
 		rotation_direction = -1
-
+		
 func get_dir():
 	return rotation_direction
 
