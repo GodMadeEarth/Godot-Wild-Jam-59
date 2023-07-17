@@ -1,9 +1,9 @@
 extends Node2D
-@onready var train_head:Train_Head = $"Train head"
+@onready var train_head = $"Train head"
 
 
 func _ready():
-	for i in range(3):
+	for i in range(2):
 		train_head.add_cart()
 	pass # Replace with function body.
 

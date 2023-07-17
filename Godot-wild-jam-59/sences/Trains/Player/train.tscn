@@ -1,8 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://vjoupg6f5jg0"]
 
 [ext_resource type="Script" path="res://sences/Trains/Player/player_controler.gd" id="1_eq25v"]
-[ext_resource type="PackedScene" uid="uid://uvh015smr05p" path="res://sences/Trains/base_train_head.tscn" id="2_q2rpj"]
-[ext_resource type="Texture2D" uid="uid://bvjdkjcitjnjl" path="res://assets/traindemo4.png" id="3_cpdu6"]
+[ext_resource type="PackedScene" uid="uid://p5b0dn2oe6xo" path="res://sences/Trains/base_train_head.tscn" id="2_q2rpj"]
 
 [node name="Player Train" type="Node2D"]
 script = ExtResource("1_eq25v")

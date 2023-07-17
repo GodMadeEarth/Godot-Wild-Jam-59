@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://uvh015smr05p"]
+[gd_scene load_steps=3 format=3 uid="uid://p5b0dn2oe6xo"]
 
 [ext_resource type="Script" path="res://sences/Trains/Train.gd" id="1_6jy5h"]
 
@@ -26,11 +26,12 @@ polygon = PackedVector2Array(8.00003, -49, 2.86102e-05, -41, -7.99997, -25, -7.9
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-8, 49)
-polygon = PackedVector2Array(2.86102e-05, -41, -7.99997, -25, -7.99997, 7, 24, 7, 24, -25, 16, -41, 8.00003, -49)
+polygon = PackedVector2Array(-7.99997, -18, -7.99997, 7, 24, 7, 24, -18, 8.00003, -41)
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
 position = Vector2(4.00543e-05, 72)
 node_a = NodePath("..")
+disable_collision = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 physics_material_override = SubResource("PhysicsMaterial_u0kt4")

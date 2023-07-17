@@ -7,13 +7,7 @@ var rotation_speed:float = PI*1.5
 var rotation_direction:= 0.0 : set = set_dir, get = get_dir
 @onready var last_cart = self
 @export var cart_spacing = 32
-
-var is_dashing = false
-var can_dash = true
-@export var dash_duration = 0.5
-@export var dash_cooldown = 2
-@export var dash_speed = 900
-
+# Called when the node enters the scene tree for the first time.
 func _ready():
 	
 	pass # Replace with function body.
