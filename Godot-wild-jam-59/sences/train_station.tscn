@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://mk8iuk8ytsrl"]
 
-[ext_resource type="Script" path="res://sences/train_station.gd" id="1_c4crj"]
+[ext_resource type="Script" path="res://sences/train_station.gd" id="1_pgf7u"]
 
 [node name="Train Station" type="Node2D"]
-script = ExtResource("1_c4crj")
+script = ExtResource("1_pgf7u")
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(2, 2)
