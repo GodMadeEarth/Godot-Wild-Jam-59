@@ -24,10 +24,5 @@ func manage_passengers(area):
 
 
 func _on_area_2d_area_entered(area):
-	if area.get_parent() is Train_Head and area.get_parent().is_dashing: 
-		var cart_index = get_parent().get_parent().get_children().find(get_parent())
-		var train:Train_Head = get_parent().get_parent().get_child(0)
-		train.remove_cart(cart_index)
-		get_parent().queue_free()
-	
-	elif area.get_parent() is Train_Station: manage_passengers(area)
+	if area.get_parent() is Train_Station:
+		manage_passengers(area)

@@ -36,14 +36,11 @@ func move_straight(delta):
 	move_and_slide()
 
 func add_cart():
-	
-	
 	var last_cart_joint = last_cart.get_node("PinJoint2D")
 	var cart = train_cart.instantiate()
-	
-	
-	
+
 	get_parent().add_child(cart)
+	cart.is_connected_to_head = true
 	cart.global_position = last_cart_joint.global_position + last_cart.global_position.direction_to(last_cart_joint.global_position) * cart_spacing
 	cart.rotation = last_cart.rotation
 	last_cart_joint.node_b = cart.get_path()
@@ -58,10 +55,15 @@ func remove_cart(index:int):
 		print("Invalid index")
 		print(get_parent().get_children().size() )
 		return 
+		
 	var new_head_cart = get_parent().get_children()[index-1]
 	new_head_cart.get_node("PinJoint2D").node_b = ""
 	last_cart = new_head_cart
-		
+	get_parent().get_children()[index].is_connected_to_head = false
+	
+	var headless_carts = get_parent().get_children().duplicate().slice(index)
+	for cart in headless_carts:
+		cart.is_connected_to_head = false
 
 	pass
 	
