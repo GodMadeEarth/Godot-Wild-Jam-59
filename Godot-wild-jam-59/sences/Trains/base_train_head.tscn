@@ -33,6 +33,11 @@ node_a = NodePath("..")
 position = Vector2(-8, 49)
 polygon = PackedVector2Array(8.00003, -49, 2.86102e-05, -41, -7.99997, -25, -7.99997, 15, 24, 15, 24, -25, 16, -41)
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(2.89679e-05, 0, -7.99997, 8, -16, 24, 2.89679e-05, 1, 16, 24, 8.00003, 8)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 physics_material_override = SubResource("PhysicsMaterial_u0kt4")
 

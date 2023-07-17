@@ -10,13 +10,9 @@ func _ready():
 func _process(delta):
 	pass
 
-
-func _on_area_2d_area_entered(area):
+func manage_passengers(area):
 	var stations:Array[Node] = area.get_parent().get_parent().get_children()
 	stations.erase(area.get_parent())
-	
-	if area.get_parent() is RigidBody2D:
-		pass
 	
 	for passenger in get_children():
 		if not passenger.visible:
@@ -25,3 +21,15 @@ func _on_area_2d_area_entered(area):
 		
 		if passenger.modulate == area.get_parent().modulate:
 			passenger.visible = false
+
+
+func _on_area_2d_area_entered(area):
+	
+	if area.get_parent() is RigidBody2D: pass
+	
+	elif area.get_parent() is Train_Head and area.get_parent().is_dashing: 
+		var cart_index = get_parent().get_parent().get_children().find(get_parent())
+		get_parent().get_parent().get_child(0).last_cart = get_parent().get_parent().get_child(cart_index-1)
+		get_parent().queue_free()
+	
+	else: manage_passengers(area)

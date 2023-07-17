@@ -36,8 +36,13 @@ func move_straight(delta):
 	move_and_slide()
 
 func add_cart():
-	var cart = train_cart.instantiate()
+	
+	
 	var last_cart_joint = last_cart.get_node("PinJoint2D")
+	var cart = train_cart.instantiate()
+	
+	
+	
 	get_parent().add_child(cart)
 	cart.global_position = last_cart_joint.global_position + last_cart.global_position.direction_to(last_cart_joint.global_position) * cart_spacing
 	cart.rotation = last_cart.rotation
