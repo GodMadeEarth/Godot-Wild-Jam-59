@@ -25,11 +25,10 @@ func manage_passengers(area):
 
 func _on_area_2d_area_entered(area):
 	
-	if area.get_parent() is RigidBody2D: pass
-	
-	elif area.get_parent() is Train_Head and area.get_parent().is_dashing: 
+	if area.get_parent() is Train_Head and area.get_parent().is_dashing: 
 		var cart_index = get_parent().get_parent().get_children().find(get_parent())
-		get_parent().get_parent().get_child(0).last_cart = get_parent().get_parent().get_child(cart_index-1)
+		var train:Train_Head = get_parent().get_parent().get_child(0)
+		train.remove_cart(cart_index)
 		get_parent().queue_free()
 	
-	else: manage_passengers(area)
+	elif area.get_parent() is Train_Station: manage_passengers(area)

@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgmekinlqjs1a"]
+
+[ext_resource type="Texture2D" uid="uid://bvjdkjcitjnjl" path="res://assets/traindemo4.png" id="1_4mn2g"]
+[ext_resource type="Script" path="res://sences/Trains/Passengers.gd" id="2_6xa3u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_458mf"]
+size = Vector2(22, 46)
+
+[node name="Train Car" type="RigidBody2D"]
+center_of_mass_mode = 1
+gravity_scale = 0.0
+linear_damp = 10.0
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(-3, 16)
+scale = Vector2(0.25, 0.479592)
+color = Color(0.658824, 0.266667, 0.0235294, 1)
+polygon = PackedVector2Array(0, -4.17021, 0, 54.2127, 24, 54.2127, 24, -4.17021)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-8, -16)
+polygon = PackedVector2Array(-7, 44, 23, 44, 23, -6, 19, -9, 8, -12, -3, -9, -7, -6)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(0, 33)
+node_a = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1.78814e-07, 0)
+scale = Vector2(2.125, 3.5)
+texture = ExtResource("1_4mn2g")
+region_enabled = true
+region_rect = Rect2(64, 32, 16, 16)
+
+[node name="Passengers" type="Node2D" parent="."]
+position = Vector2(1.60003, -23.2)
+script = ExtResource("2_6xa3u")
+
+[node name="Polygon2D" type="Polygon2D" parent="Passengers"]
+visible = false
+position = Vector2(14.4, 23.2)
+offset = Vector2(-16, -24)
+polygon = PackedVector2Array(11, 24, 12, 20, 16, 19, 20, 20, 21, 24, 20, 28, 16, 29, 12, 28)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Passengers"]
+visible = false
+position = Vector2(14.4, 7.2)
+offset = Vector2(-16, -24)
+polygon = PackedVector2Array(11, 24, 12, 20, 16, 19, 20, 20, 21, 24, 20, 28, 16, 29, 12, 28)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Passengers"]
+visible = false
+position = Vector2(14.4, 39.2)
+offset = Vector2(-16, -24)
+polygon = PackedVector2Array(11, 24, 12, 20, 16, 19, 20, 20, 21, 24, 20, 28, 16, 29, 12, 28)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Passengers"]
+visible = false
+position = Vector2(-17.6, 39.2)
+offset = Vector2(-16, -24)
+polygon = PackedVector2Array(11, 24, 12, 20, 16, 19, 20, 20, 21, 24, 20, 28, 16, 29, 12, 28)
+
+[node name="Polygon2D5" type="Polygon2D" parent="Passengers"]
+visible = false
+position = Vector2(-17.6, 23.2)
+offset = Vector2(-16, -24)
+polygon = PackedVector2Array(11, 24, 12, 20, 16, 19, 20, 20, 21, 24, 20, 28, 16, 29, 12, 28)
+
+[node name="Polygon2D6" type="Polygon2D" parent="Passengers"]
+visible = false
+position = Vector2(-17.6, 7.2)
+offset = Vector2(-16, -24)
+polygon = PackedVector2Array(11, 24, 12, 20, 16, 19, 20, 20, 21, 24, 20, 28, 16, 29, 12, 28)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_458mf")
+
+[connection signal="area_entered" from="Area2D" to="Passengers" method="_on_area_2d_area_entered"]
