@@ -1,0 +1,97 @@
+[gd_scene load_steps=7 format=3 uid="uid://byxyjlwoqlrg1"]
+
+[ext_resource type="Script" path="res://sences/UI/player HUD/shop HUD.gd" id="1_ssi0j"]
+[ext_resource type="PackedScene" uid="uid://bq0go4q4e1qy0" path="res://sences/UI/upgrades/speed/speed_upgrade.tscn" id="2_knqbg"]
+[ext_resource type="PackedScene" uid="uid://de0n5vosd3qxo" path="res://sences/UI/upgrades/dash cooldown/dash cooldown.tscn" id="2_r6vso"]
+[ext_resource type="PackedScene" uid="uid://c70wos34on6fi" path="res://sences/UI/upgrades/dash duration/dash duration.tscn" id="3_lm1rd"]
+[ext_resource type="PackedScene" uid="uid://cjj2d0x5txorg" path="res://sences/UI/upgrades/dash speed/dash speed.tscn" id="3_ps16c"]
+[ext_resource type="PackedScene" uid="uid://deqjrejmk1jmt" path="res://sences/UI/upgrades/create cart/create cart.tscn" id="4_wr804"]
+
+[node name="shop HUD" type="Control"]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ssi0j")
+
+[node name="purchest window" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = 256.0
+offset_right = 1536.0
+offset_bottom = 576.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="purchest window"]
+layout_mode = 2
+offset_left = 128.0
+offset_right = 1152.0
+offset_bottom = 224.0
+color = Color(0.227451, 0.619608, 0.454902, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="purchest window"]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 24.0
+offset_right = 1130.0
+offset_bottom = 199.0
+mouse_filter = 2
+
+[node name="dash duration" parent="purchest window/HBoxContainer" instance=ExtResource("2_r6vso")]
+layout_mode = 2
+size_flags_horizontal = 7
+
+[node name="dash duration2" parent="purchest window/HBoxContainer" instance=ExtResource("3_lm1rd")]
+layout_mode = 2
+size_flags_horizontal = 7
+
+[node name="speed_upgrade" parent="purchest window/HBoxContainer" instance=ExtResource("2_knqbg")]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="dash speed" parent="purchest window/HBoxContainer" instance=ExtResource("3_ps16c")]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="create cart" parent="purchest window/HBoxContainer" instance=ExtResource("4_wr804")]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="tool_tip_box" type="Polygon2D" parent="purchest window"]
+visible = false
+position = Vector2(576, 521)
+scale = Vector2(1.3125, 1.5)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-329.143, -59.3333, -24.381, -59.3333, 0, -59.3333, 24.3809, -59.3333, 426.667, -59.3333, 438.857, -80.6667, 438.857, -176.667, 426.667, -187.333, -329.143, -187.333, -341.333, -176.667, -341.333, -70)
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="purchest window/tool_tip_box"]
+offset_left = -317.0
+offset_top = -177.0
+offset_right = 414.0
+offset_bottom = -72.0
+
+[node name="Label" type="Label" parent="purchest window/tool_tip_box/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Lorem ipsum dolor sit amet,
+consectetur adipiscing elit,
+sed do eiusmod tempor
+incididunt ut labore et."
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 512.0
+offset_right = 1088.0
+offset_bottom = 576.0
+text = "Shop"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -7,4 +7,3 @@
 script = ExtResource("1_khb3y")
 
 [node name="Train head" parent="." instance=ExtResource("1_s8jih")]
-speed = 0

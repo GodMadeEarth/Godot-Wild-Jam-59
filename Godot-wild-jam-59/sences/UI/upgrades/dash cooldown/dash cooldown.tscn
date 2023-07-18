@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://de0n5vosd3qxo"]
+
+[ext_resource type="Script" path="res://sences/UI/upgrades/dash cooldown/dash cooldown.gd" id="1_xx1tw"]
+[ext_resource type="PackedScene" uid="uid://dubaug3im8co3" path="res://sences/UI/upgrade_button.tscn" id="2_akkns"]
+
+[node name="dash cooldown" type="MarginContainer"]
+script = ExtResource("1_xx1tw")
+
+[node name="upgrade_button" parent="." instance=ExtResource("2_akkns")]
+layout_mode = 2
+item_name = "Dash cooldown"
+description = "Lowers the time it takes for the dash to rechatge"

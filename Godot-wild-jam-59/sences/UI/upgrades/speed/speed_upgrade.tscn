@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq0go4q4e1qy0"]
+
+[ext_resource type="Script" path="res://sences/UI/upgrades/speed/speed_upgrade.gd" id="1_obgdw"]
+[ext_resource type="PackedScene" uid="uid://dubaug3im8co3" path="res://sences/UI/upgrade_button.tscn" id="2_w3ce2"]
+
+[node name="speed_upgrade" type="MarginContainer"]
+script = ExtResource("1_obgdw")
+
+[node name="upgrade_button" parent="." instance=ExtResource("2_w3ce2")]
+layout_mode = 2
+item_name = "Speed"
+description = "Increase the train's speed"

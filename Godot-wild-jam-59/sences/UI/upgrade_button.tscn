@@ -1,0 +1,82 @@
+[gd_scene load_steps=10 format=3 uid="uid://dubaug3im8co3"]
+
+[ext_resource type="Script" path="res://sences/UI/upgrade_button.gd" id="1_85yko"]
+[ext_resource type="Texture2D" uid="uid://oytgvdls8ek3" path="res://icon.svg" id="1_uo5pi"]
+
+[sub_resource type="Gradient" id="Gradient_410lu"]
+offsets = PackedFloat32Array(0, 0.469388, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.345098, 0.780392, 0.231373, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o1661"]
+gradient = SubResource("Gradient_410lu")
+fill_to = Vector2(0.995238, 1)
+
+[sub_resource type="Gradient" id="Gradient_4do72"]
+offsets = PackedFloat32Array(0, 0.557823, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.909804, 0.92549, 0.109804, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ywa24"]
+gradient = SubResource("Gradient_4do72")
+fill_from = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ftlrl"]
+bg_color = Color(0.129412, 0.129412, 0.129412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="Theme" id="Theme_glguo"]
+Label/font_sizes/font_size = 18
+Label/styles/normal = SubResource("StyleBoxFlat_ftlrl")
+
+[sub_resource type="Theme" id="Theme_wvrjf"]
+Label/font_sizes/font_size = 18
+Label/styles/normal = SubResource("StyleBoxFlat_ftlrl")
+
+[node name="upgrade_button" type="TextureButton"]
+offset_left = 23.0
+offset_top = 23.0
+offset_right = 151.0
+offset_bottom = 151.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("1_uo5pi")
+texture_pressed = SubResource("GradientTexture2D_o1661")
+texture_hover = SubResource("GradientTexture2D_ywa24")
+stretch_mode = 5
+script = ExtResource("1_85yko")
+
+[node name="upgrade_button" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(175, 175)
+offset_left = -23.0
+offset_top = -23.0
+offset_right = 152.0
+offset_bottom = 152.0
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="upgrade_button"]
+layout_mode = 2
+
+[node name="item_name" type="Label" parent="upgrade_button/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme = SubResource("Theme_glguo")
+text = "Upgrade 1"
+
+[node name="price" type="Label" parent="upgrade_button/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme = SubResource("Theme_wvrjf")
+text = "Price"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="update_ui" from="." to="." method="_on_update_ui"]

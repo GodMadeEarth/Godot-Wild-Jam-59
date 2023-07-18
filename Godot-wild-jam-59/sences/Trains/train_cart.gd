@@ -14,7 +14,9 @@ func _process(delta):
 
 func _on_area_2d_area_entered(area):
 	if area.get_parent() is Train_Head and area.get_parent().is_dashing: 
+		print(get_parent().get_child(0))
 		var train:Train_Head = get_parent().get_child(0)
+		
 		if is_connected_to_head:
 			train.remove_cart(get_index())
 		queue_free()

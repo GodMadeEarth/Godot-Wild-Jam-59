@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://deqjrejmk1jmt"]
+
+[ext_resource type="Script" path="res://sences/UI/upgrades/create cart/create cart.gd" id="1_ukwbn"]
+[ext_resource type="PackedScene" uid="uid://dubaug3im8co3" path="res://sences/UI/upgrade_button.tscn" id="2_a3udm"]
+
+[node name="create cart" type="MarginContainer"]
+script = ExtResource("1_ukwbn")
+
+[node name="upgrade_button" parent="." instance=ExtResource("2_a3udm")]
+layout_mode = 2
+item_name = "Add cart"
+description = "Adds another cart to the end of your train"
+
+[connection signal="pressed" from="upgrade_button" to="." method="_on_upgrade_button_pressed"]

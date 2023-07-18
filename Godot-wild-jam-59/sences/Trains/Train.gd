@@ -47,7 +47,14 @@ var is_dashing = false
 	"Increment Cost By" : 6,
 	"Total Purchaces" : 0
 }
-
+# Remember to add this as an upgrade
+@export var trainLenghtStats:Dictionary = {
+	"Base Value" : 0,
+	"Increment Value By" : 1,
+	"Base Cost" : 12,
+	"Increment Cost By" : 6,
+	"Total Purchaces" : 0
+}
 
 var rotation_speed:float:
 	get:
@@ -69,11 +76,16 @@ var dash_speed:int:
 	get:
 		return dashSpeedStats["Base Value"] + (dashSpeedStats["Increment Value By"] * dashSpeedStats["Total Purchaces"])
 
+var train_length:int:
+	get:
+		return trainLenghtStats["Base Value"] + (trainLenghtStats["Increment Value By"] * trainLenghtStats["Total Purchaces"])
+
 func _ready():
 	
 	pass # Replace with function body.
 
 func _physics_process(delta):
+	
 	move_straight(delta)
 	
 func move_arc(delta):
@@ -99,7 +111,7 @@ func add_cart():
 	print(last_cart.rotation)
 	last_cart = cart
 	
-	print(last_cart.rotation)
+	print(train_length)
 
 # index 0 can never be accessed since it's the head.
 func remove_cart(index:int):
@@ -116,7 +128,13 @@ func remove_cart(index:int):
 	var headless_carts = get_parent().get_children().duplicate().slice(index)
 	for cart in headless_carts:
 		cart.is_connected_to_head = false
-
+	
+	#Updates the base value when ever carts are lost
+	var length = 0
+	for i in get_parent().get_children():
+		if i is Train_Cart and i.is_connected_to_head:
+			length+=1
+	trainLenghtStats["Base Value"] = length
 	pass
 	
 func dash():

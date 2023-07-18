@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c70wos34on6fi"]
+
+[ext_resource type="Script" path="res://sences/UI/upgrades/dash duration/dash duration.gd" id="1_ji6g6"]
+[ext_resource type="PackedScene" uid="uid://dubaug3im8co3" path="res://sences/UI/upgrade_button.tscn" id="2_bidkc"]
+
+[node name="dash duration" type="MarginContainer"]
+script = ExtResource("1_ji6g6")
+
+[node name="upgrade_button" parent="." instance=ExtResource("2_bidkc")]
+layout_mode = 2
+item_name = "Dash Duration"
+description = "Increases  how long a dash last"
