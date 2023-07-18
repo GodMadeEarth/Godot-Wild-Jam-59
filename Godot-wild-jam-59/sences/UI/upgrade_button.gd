@@ -17,10 +17,11 @@ func _on_mouse_entered():
 	pass # Replace with function body.
 
 func _on_update_ui(button):
-	price_text.text = "$"+str(get_parent().train_head.speedStats["Base Cost"])
+	price_text.text = "$"+str(get_parent().stat_sheet["Base Cost"] +(get_parent().stat_sheet["Increment Cost By"] * get_parent().stat_sheet["Total Purchaces"]))
 	item_text.text = item_name
 	pass # Replace with function body.
 
 func _on_pressed():
 	get_parent().stat_sheet["Total Purchaces"]+= 1
+	_on_update_ui(self)
 	pass # Replace with function body.

@@ -54,6 +54,7 @@ script = ExtResource("1_85yko")
 
 [node name="upgrade_button" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(175, 175)
+layout_mode = 0
 offset_left = -23.0
 offset_top = -23.0
 offset_right = 152.0
