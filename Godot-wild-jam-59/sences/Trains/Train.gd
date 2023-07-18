@@ -69,13 +69,10 @@ var dash_speed:int:
 	get:
 		return dashSpeedStats["Base Value"] + (dashSpeedStats["Increment Value By"] * dashSpeedStats["Total Purchaces"])
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	move_straight(delta)
 	
@@ -86,7 +83,7 @@ func move_arc(delta):
 	position += velocity
 	
 func move_straight(delta):
-	velocity = (Vector2.UP.rotated(rotation) * (speed if !is_dashing else dash_speed)) 
+	velocity = (Vector2.UP.rotated(rotation) * (speed + (0 if !is_dashing else dash_speed))) 
 	
 	move_and_slide()
 
