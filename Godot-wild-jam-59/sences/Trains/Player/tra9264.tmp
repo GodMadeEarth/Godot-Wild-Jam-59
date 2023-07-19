@@ -17,9 +17,13 @@ offset_right = -535.0
 offset_bottom = -270.0
 train_head = NodePath("../../Train head")
 
-[node name="dead carts" type="Node2D" parent="."]
-
 [node name="Train head" parent="." instance=ExtResource("2_q2rpj")]
+rotationStats = null
+speedStats = null
+dashDuriationStats = null
+dashCooldownStats = null
+dashSpeedStats = null
+trainLenghtStats = null
 
 [node name="Camera2D2" type="Camera2D" parent="Train head"]
 zoom = Vector2(0.25, 0.25)

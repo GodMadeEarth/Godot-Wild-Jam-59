@@ -193,25 +193,25 @@ offset_bottom = 4096.0
 color = Color(0.0784314, 0.0784314, 0.0784314, 1)
 
 [node name="Player Train" parent="." instance=ExtResource("1_f5mae")]
-position = Vector2(4049, 1849)
+position = Vector2(2685, 2587)
 
 [node name="Enemy Train" parent="." instance=ExtResource("3_1icv6")]
-position = Vector2(4665, 1339)
+position = Vector2(3032, 3491)
 
 [node name="Enemy Train2" parent="." instance=ExtResource("3_1icv6")]
-position = Vector2(5225, 1090)
+position = Vector2(1702, 3171)
 
 [node name="Enemy Train3" parent="." instance=ExtResource("3_1icv6")]
-position = Vector2(2246, 2045)
+position = Vector2(2291, 2564)
 
 [node name="Enemy Train4" parent="." instance=ExtResource("3_1icv6")]
-position = Vector2(5336, 2502)
+position = Vector2(2277, 3439)
 
 [node name="Enemy Train5" parent="." instance=ExtResource("3_1icv6")]
-position = Vector2(4070, 1089)
+position = Vector2(3707, 3165)
 
 [node name="Enemy Train6" parent="." instance=ExtResource("3_1icv6")]
-position = Vector2(3192, 2793)
+position = Vector2(3000, 2601)
 
 [node name="Stations" type="Node2D" parent="."]
 

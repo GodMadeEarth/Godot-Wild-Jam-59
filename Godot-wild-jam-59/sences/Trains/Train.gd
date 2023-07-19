@@ -81,15 +81,12 @@ var train_length:int:
 		return trainLenghtStats["Base Value"] + (trainLenghtStats["Increment Value By"] * trainLenghtStats["Total Purchaces"])
 
 func _ready():
-	
 	pass # Replace with function body.
 
-func _physics_process(delta):
-	
+func _physics_process(delta):	
 	move_straight(delta)
 	
 func move_arc(delta):
-
 	velocity = (Vector2.UP.rotated(rotation) * speed*delta) 
 	rotation = rotation+(rotation_direction*rotation_speed*delta)
 	position += velocity
@@ -103,39 +100,77 @@ func move_straight(_delta):
 func add_cart():
 	var last_cart_joint:PinJoint2D = last_cart.get_node("PinJoint2D")
 	var cart = train_cart.instantiate()
-
-	get_parent().add_child(cart)
 	cart.is_connected_to_head = true
+	
+	get_parent().add_child(cart)
 	cart.global_position = last_cart_joint.global_position + last_cart.global_position.direction_to(last_cart_joint.global_position) * cart_spacing
 	cart.rotation = last_cart.rotation
-	cart.head = last_cart
+	
 	last_cart_joint.node_b = cart.get_path()
 	print(last_cart.rotation)
+	if last_cart is Train_Cart:
+		last_cart.get_node("ColorRect").visible = false
 	last_cart = cart
-	
+	if last_cart is Train_Cart:
+		last_cart.get_node("ColorRect").visible = true
 	print(train_length)
+
+
+func deep_delete(node):
+	if node is Train_Cart:
+#		get_parent().call_deferred("remove_child",node)
+#		$"../dead carts".call_deferred("add_child",node)
+#		node.set_deferred("is_connected_to_head", false)
+#		node.call_deferred("set_collision_layer_value",1,false)
+		while !node.get_node("PinJoint2D").node_b.is_empty():
+			await get_parent().remove_child(node)
+			$"../dead carts".add_child(node)
+			node.is_connected_to_head = false
+			node.set_collision_layer_value(1,false)
+			node = get_parent().get_node(node.get_node("PinJoint2D").node_b)
+			print("Nosey node: ",node)
+		if !node.get_node("PinJoint2D").node_b.is_empty():
+			await deep_delete(get_parent().get_node(node.get_node("PinJoint2D").node_b))
+		else:
+			return
+		
 
 # index 0 can never be accessed since it's the head.
 func remove_cart(index:int):
-	if get_parent().get_children().size()-1 <= index or index <= 1 or !(get_parent().get_children()[index] is Train_Cart):
-		print("Invalid index",index)
-		print(get_parent().get_children().size() )
+	if get_parent().get_children().size()-1 <= index or index <= 2 or !(get_parent().get_children()[index] is Train_Cart):
+		print("Invalid index: ",index)
 		return 
 	
-	var new_head_cart = get_parent().get_children()[index].head
-	new_head_cart.get_node("PinJoint2D").node_b = ""
-	get_parent().get_children()[index].is_connected_to_head = false
-	get_parent().get_children()[index].emit_signal("disable_tail")
+	var removed_cart:Train_Cart = get_parent().get_children()[index]
+	await deep_delete(removed_cart)
+	
+	if last_cart is Train_Cart:
+		last_cart.get_node("ColorRect").visible = false
+	last_cart = get_parent().get_children()[get_parent().get_children().size()-1]
+	if last_cart is Train_Cart:
+		last_cart.get_node("ColorRect").visible = true
+	
+#	removed_cart.emit_signal("disable_tail")
+	print("Test ",last_cart)
+	last_cart.get_node("PinJoint2D").node_b = ""
+	
+#	for i in get_parent().get_children():
+#		if i is Train_Cart:
+#			if i.get_node("PinJoint2D").node_b == removed_cart.get_path():
+#				get_parent().get_node(i)
 
-	last_cart = new_head_cart
-	get_parent().get_children()[index].head = null
+
+	
+
+				
 	#Updates the base value when ever carts are lost
-	var length = 0
-	for i in get_parent().get_children():
-		if i is Train_Cart and i.is_connected_to_head:
-			length+=1
-	trainLenghtStats["Base Value"] = length
-	print("Cart remoeved at INDEX: ",index, last_cart)
+#	var length = 0
+#	for i in get_parent().get_children():
+#		if i is Train_Cart and i.is_connected_to_head:
+#			length+=1
+#	trainLenghtStats["Base Value"] = length
+
+#	print("Cart remoeved at INDEX: ",removed_cart," <-----Was the cart that was removed) (Now the last cart-------> ", last_cart)
 	
 func dash():
 	if can_dash and !is_dashing:
