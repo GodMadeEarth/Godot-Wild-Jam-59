@@ -24,7 +24,7 @@ func _physics_process(delta):
 	pass
 
 func sensor():
-	if ray.is_colliding():
+	if ray.is_colliding()==true:
 		return ray.get_collider()
 	else:
 		return null

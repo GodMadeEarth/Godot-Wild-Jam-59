@@ -1,15 +1,15 @@
 extends CharacterBody2D
 class_name Train_Head
 
-@onready var train_cart = preload("res://sences/Trains/train_cart.tscn")
+const  train_cart = preload("res://sences/Trains/train_cart.tscn")
 
-var rotation_direction:= 0.0 : set = set_dir, get = get_dir
-
+var rotation_direction:float= 0.0 : set = set_dir, get = get_dir
+var new_velocity:Vector2=Vector2(0.0,0.0)
 @onready var last_cart = self
-@export var cart_spacing = 32
+@export var cart_spacing:int = 32
 
-var can_dash = true
-var is_dashing = false
+var can_dash:bool = true
+var is_dashing:bool = false
 
 
 @export var rotationStats:Dictionary = {
@@ -95,12 +95,13 @@ func move_arc(delta):
 	position += velocity
 	
 func move_straight(_delta):
-	velocity = (Vector2.UP.rotated(rotation) * (speed + (0 if !is_dashing else dash_speed))) 
-	
+	new_velocity = (Vector2.UP.rotated(rotation) * (speed + (0 if !is_dashing else dash_speed))) 
+	set_velocity(new_velocity)
 	move_and_slide()
+	new_velocity=velocity
 
 func add_cart():
-	var last_cart_joint = last_cart.get_node("PinJoint2D")
+	var last_cart_joint:PinJoint2D = last_cart.get_node("PinJoint2D")
 	var cart = train_cart.instantiate()
 
 	get_parent().add_child(cart)
