@@ -18,6 +18,7 @@ grow_vertical = 2
 script = ExtResource("1_ssi0j")
 
 [node name="purchest window" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_left = 256.0
 offset_right = 1536.0

@@ -27,5 +27,4 @@ func lisen_for_controles(delta):
 		train_head.add_cart()
 	if Input.is_action_just_pressed("ui_up"):
 		print("Cart removed")
-		var rand_index = randi_range(1,get_children().size()-1)
-		train_head.remove_cart(1)
+		train_head.remove_cart(3)

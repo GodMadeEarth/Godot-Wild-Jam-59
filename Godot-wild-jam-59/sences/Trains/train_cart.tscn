@@ -80,5 +80,6 @@ polygon = PackedVector2Array(11, 24, 12, 20, 16, 19, 20, 20, 21, 24, 20, 28, 16,
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_458mf")
 
+[connection signal="disable_tail" from="." to="." method="_on_disable_tail"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="Area2D" to="Passengers" method="_on_area_2d_area_entered"]

@@ -16,7 +16,7 @@ func _on_mouse_entered():
 	emit_signal("update_ui",self)
 	pass # Replace with function body.
 
-func _on_update_ui(button):
+func _on_update_ui(_button):
 	price_text.text = "$"+str(get_parent().stat_sheet["Base Cost"] +(get_parent().stat_sheet["Increment Cost By"] * get_parent().stat_sheet["Total Purchaces"]))
 	item_text.text = item_name
 	pass # Replace with function body.

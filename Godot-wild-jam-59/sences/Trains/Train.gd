@@ -90,11 +90,11 @@ func _physics_process(delta):
 	
 func move_arc(delta):
 
-	var velocity = (Vector2.UP.rotated(rotation) * speed*delta) 
+	velocity = (Vector2.UP.rotated(rotation) * speed*delta) 
 	rotation = rotation+(rotation_direction*rotation_speed*delta)
 	position += velocity
 	
-func move_straight(delta):
+func move_straight(_delta):
 	velocity = (Vector2.UP.rotated(rotation) * (speed + (0 if !is_dashing else dash_speed))) 
 	
 	move_and_slide()
@@ -107,6 +107,7 @@ func add_cart():
 	cart.is_connected_to_head = true
 	cart.global_position = last_cart_joint.global_position + last_cart.global_position.direction_to(last_cart_joint.global_position) * cart_spacing
 	cart.rotation = last_cart.rotation
+	cart.head = last_cart
 	last_cart_joint.node_b = cart.get_path()
 	print(last_cart.rotation)
 	last_cart = cart
@@ -115,27 +116,25 @@ func add_cart():
 
 # index 0 can never be accessed since it's the head.
 func remove_cart(index:int):
-	if get_parent().get_children().size()-1 <= index or index <= 0:
-		print("Invalid index")
+	if get_parent().get_children().size()-1 <= index or index <= 1 or !(get_parent().get_children()[index] is Train_Cart):
+		print("Invalid index",index)
 		print(get_parent().get_children().size() )
 		return 
-		
-	var new_head_cart = get_parent().get_children()[index-1]
+	
+	var new_head_cart = get_parent().get_children()[index].head
 	new_head_cart.get_node("PinJoint2D").node_b = ""
-	last_cart = new_head_cart
 	get_parent().get_children()[index].is_connected_to_head = false
-	
-	var headless_carts = get_parent().get_children().duplicate().slice(index)
-	for cart in headless_carts:
-		cart.is_connected_to_head = false
-	
+	get_parent().get_children()[index].emit_signal("disable_tail")
+
+	last_cart = new_head_cart
+	get_parent().get_children()[index].head = null
 	#Updates the base value when ever carts are lost
 	var length = 0
 	for i in get_parent().get_children():
 		if i is Train_Cart and i.is_connected_to_head:
 			length+=1
 	trainLenghtStats["Base Value"] = length
-	pass
+	print("Cart remoeved at INDEX: ",index, last_cart)
 	
 func dash():
 	if can_dash and !is_dashing:
