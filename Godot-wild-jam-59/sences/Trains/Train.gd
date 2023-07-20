@@ -5,8 +5,9 @@ const  train_cart = preload("res://sences/Trains/train_cart.tscn")
 
 var rotation_direction:float= 0.0 : set = set_dir, get = get_dir
 var new_velocity:Vector2=Vector2(0.0,0.0)
-@onready var last_cart = self
+@onready var last_cart:PhysicsBody2D = self
 @export var cart_spacing:int = 32
+var pintjoint_connected_notifier:int=0
 
 var can_dash:bool = true
 var is_dashing:bool = false
@@ -81,7 +82,7 @@ var train_length:int:
 		return trainLenghtStats["Base Value"] + (trainLenghtStats["Increment Value By"] * trainLenghtStats["Total Purchaces"])
 
 func _ready():
-	pass # Replace with function body.
+	set_physics_process(true)
 
 func _physics_process(delta):	
 	move_straight(delta)
@@ -105,6 +106,8 @@ func add_cart():
 	get_parent().add_child(cart)
 	cart.global_position = last_cart_joint.global_position + last_cart.global_position.direction_to(last_cart_joint.global_position) * cart_spacing
 	cart.rotation = last_cart.rotation
+	pintjoint_connected_notifier=pintjoint_connected_notifier+1
+	print(str(pintjoint_connected_notifier))
 	
 	last_cart_joint.node_b = cart.get_path()
 	print(last_cart.rotation)
@@ -131,8 +134,8 @@ func remove_cart(index:int):
 		print("Invalid index: ",index)
 		return 
 	
-	var removed_cart:Train_Cart = get_parent().get_children()[index]
-	deep_delete(removed_cart)
+	#var removed_cart:Train_Cart = get_parent().get_children()[index]
+	#deep_delete(removed_cart)
 	
 	if last_cart is Train_Cart:
 		last_cart.get_node("ColorRect").visible = false
@@ -161,7 +164,7 @@ func remove_cart(index:int):
 #	print("Cart remoeved at INDEX: ",removed_cart," <-----Was the cart that was removed) (Now the last cart-------> ", last_cart)
 	
 func dash():
-	if can_dash and !is_dashing:
+	if can_dash==true && is_dashing==false:
 		print("DASHING!!!")
 		can_dash = false
 		is_dashing = true
