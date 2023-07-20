@@ -134,8 +134,8 @@ func remove_cart(index:int):
 		print("Invalid index: ",index)
 		return 
 	
-	#var removed_cart:Train_Cart = get_parent().get_children()[index]
-	#deep_delete(removed_cart)
+	var removed_cart:Train_Cart = get_parent().get_children()[index]
+	deep_delete(removed_cart)
 	
 	if last_cart is Train_Cart:
 		last_cart.get_node("ColorRect").visible = false
