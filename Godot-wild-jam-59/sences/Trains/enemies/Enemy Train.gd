@@ -4,7 +4,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 enum train_states {WONDER,CHASE,DASH,AVOID}
 var active_state:train_states = train_states.WONDER
-var target = null
+var target_pos:Vector2
 
 func _ready():
 	randomize()
@@ -34,13 +34,17 @@ func state_manager():
 	if collider:
 		if collider is Train_Cart:
 			active_state = train_states.DASH
-		elif collider is Train_Station:
+		elif collider is Train_Station or collider is Train_Head:
 			active_state = train_states.CHASE
+#			target_pos = collider
 		elif sensor() is StaticBody2D:
 			active_state = train_states.WONDER
 	elif collider == null:
 		active_state = train_states.WONDER
 	pass
+	
+	
+	
 func state_machine(delta):
 	var look_dir = 0
 	match active_state:

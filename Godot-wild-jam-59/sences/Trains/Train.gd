@@ -115,17 +115,14 @@ func add_cart():
 		last_cart.get_node("ColorRect").visible = true
 	print(train_length)
 
-
 func deep_delete(node:Train_Cart):
 	if node is Train_Cart:
-		node.reparent($"../dead carts")
+		node.reparent.call_deferred($"../dead carts")
 		node.is_connected_to_head = false
 		node.set_collision_layer_value(1,false)
-		print("Nosey node: ",node)
-		if !node.get_node("PinJoint2D").node_b.is_empty():
-			return await deep_delete(get_parent().get_node(node.get_node("PinJoint2D").node_b))
-		else:
+		if node.get_node("PinJoint2D").node_b.is_empty():
 			return false
+		deep_delete(get_parent().get_node(node.get_node("PinJoint2D").node_b))
 		
 
 # index 0 can never be accessed since it's the head.
@@ -139,12 +136,13 @@ func remove_cart(index:int):
 	
 	if last_cart is Train_Cart:
 		last_cart.get_node("ColorRect").visible = false
+	await get_tree().process_frame
 	last_cart = get_parent().get_children()[get_parent().get_children().size()-1]
 	if last_cart is Train_Cart:
 		last_cart.get_node("ColorRect").visible = true
 	
 #	removed_cart.emit_signal("disable_tail")
-	print("Test ",last_cart)
+	print("Test ",last_cart," of parent ",get_parent())
 	last_cart.get_node("PinJoint2D").node_b = ""
 	
 #	for i in get_parent().get_children():
