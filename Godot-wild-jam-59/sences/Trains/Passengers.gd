@@ -4,6 +4,7 @@ signal points_gained(points:int)
 signal money_gained(money:int)
 @export var point_value:int = 5
 @export var bonus_multiplyer:float = 3.0
+@export var money_value = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,10 +15,12 @@ func manage_passengers(area):
 	stations.erase(area.get_parent())
 	var color_matches = 0
 	var bonus = 0
+	
 	for passenger in get_children():
 		if not passenger.visible:
 			passenger.visible = true
 			passenger.modulate = stations.pick_random().modulate
+			emit_signal("money_gained",money_value)
 		if passenger.modulate == area.get_parent().modulate:
 			color_matches+=1
 			emit_signal("points_gained",point_value)

@@ -1,6 +1,7 @@
 extends CharacterBody2D
 class_name Train_Head
 signal points_recived(points)
+signal money_recived(money)
 const  train_cart = preload("res://sences/Trains/train_cart.tscn")
 
 var rotation_direction:float= 0.0 : set = set_dir, get = get_dir
@@ -102,7 +103,7 @@ func add_cart():
 	var last_cart_joint:PinJoint2D = last_cart.get_node("PinJoint2D")
 	var cart = train_cart.instantiate()
 	cart.is_connected_to_head = true
-
+	cart.get_node("Passengers").money_gained.connect(money_changed)
 	cart.get_node("Passengers").points_gained.connect(score_changed)
 	get_parent().add_child(cart)
 	cart.global_position = last_cart_joint.global_position + last_cart.global_position.direction_to(last_cart_joint.global_position) * cart_spacing
@@ -118,6 +119,7 @@ func deep_delete(node:Train_Cart):
 		node.reparent.call_deferred($"../dead carts")
 		node.is_connected_to_head = false
 		node.set_collision_layer_value(1,false)
+		node.get_node("Passengers").money_gained.disconnect(money_changed)
 		node.get_node("Passengers").points_gained.disconnect(score_changed)
 		if node.get_node("PinJoint2D").node_b.is_empty():
 			return false
@@ -173,3 +175,6 @@ func _on_dash_timer_timeout():
 
 func score_changed(points):
 	emit_signal("points_recived",points)
+	
+func money_changed(money):
+	emit_signal("money_recived",money)

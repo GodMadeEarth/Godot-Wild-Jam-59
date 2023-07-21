@@ -77,27 +77,30 @@ offset_right = 1130.0
 offset_bottom = 199.0
 mouse_filter = 2
 
-[node name="dash duration" parent="purchest window/HBoxContainer" instance=ExtResource("2_r6vso")]
+[node name="dash speed" parent="purchest window/HBoxContainer" instance=ExtResource("3_ps16c")]
 layout_mode = 2
 size_flags_horizontal = 7
+size_flags_vertical = 5
 
-[node name="dash duration2" parent="purchest window/HBoxContainer" instance=ExtResource("3_lm1rd")]
+[node name="dash cooldown" parent="purchest window/HBoxContainer" instance=ExtResource("2_r6vso")]
 layout_mode = 2
 size_flags_horizontal = 7
+size_flags_vertical = 5
+
+[node name="dash duration" parent="purchest window/HBoxContainer" instance=ExtResource("3_lm1rd")]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 5
 
 [node name="speed_upgrade" parent="purchest window/HBoxContainer" instance=ExtResource("2_knqbg")]
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-
-[node name="dash speed" parent="purchest window/HBoxContainer" instance=ExtResource("3_ps16c")]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
+size_flags_horizontal = 7
+size_flags_vertical = 5
 
 [node name="create cart" parent="purchest window/HBoxContainer" instance=ExtResource("4_wr804")]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 7
+size_flags_vertical = 5
 
 [node name="tool_tip_box" type="Polygon2D" parent="purchest window"]
 visible = false

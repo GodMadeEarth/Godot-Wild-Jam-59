@@ -34,3 +34,7 @@ func lisen_for_controles(delta):
 func _on_train_head_points_recived(points):
 	GlobalData.score = points
 	pass # Replace with function body.
+
+func _on_train_head_money_recived(money):
+	GlobalData.money = money
+	pass # Replace with function body.

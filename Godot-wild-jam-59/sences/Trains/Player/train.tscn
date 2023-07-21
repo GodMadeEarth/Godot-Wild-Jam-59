@@ -38,4 +38,5 @@ scale = Vector2(1.32, 1.32)
 region_enabled = true
 region_rect = Rect2(9, 101, 25, 47)
 
+[connection signal="money_recived" from="Train head" to="." method="_on_train_head_money_recived"]
 [connection signal="points_recived" from="Train head" to="." method="_on_train_head_points_recived"]
