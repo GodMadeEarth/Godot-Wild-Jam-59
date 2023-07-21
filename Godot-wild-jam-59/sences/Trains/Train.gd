@@ -49,7 +49,6 @@ var is_dashing:bool = false
 	"Increment Cost By" : 6,
 	"Total Purchaces" : 0
 }
-# Remember to add this as an upgrade
 @export var trainLenghtStats:Dictionary = {
 	"Base Value" : 0,
 	"Increment Value By" : 1,
@@ -114,7 +113,7 @@ func add_cart():
 	last_cart_joint.node_b = cart.get_path()
 	last_cart = cart
 
-func deep_delete(node:Train_Cart):
+func relocate_carts(node:Train_Cart):
 	if node is Train_Cart:
 		node.reparent.call_deferred($"../dead carts")
 		node.is_connected_to_head = false
@@ -123,7 +122,7 @@ func deep_delete(node:Train_Cart):
 		node.get_node("Passengers").points_gained.disconnect(score_changed)
 		if node.get_node("PinJoint2D").node_b.is_empty():
 			return false
-		deep_delete(get_parent().get_node(node.get_node("PinJoint2D").node_b))
+		relocate_carts(get_parent().get_node(node.get_node("PinJoint2D").node_b))
 		
 # index 0 can never be accessed since it's the head.
 func remove_cart(index:int):
@@ -132,7 +131,7 @@ func remove_cart(index:int):
 		return 
 	
 	var removed_cart:Train_Cart = get_parent().get_children()[index]
-	deep_delete(removed_cart)
+	relocate_carts(removed_cart)
 	
 	await get_tree().process_frame
 	last_cart = get_parent().get_children()[get_parent().get_children().size()-1]

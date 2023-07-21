@@ -30,7 +30,6 @@ func lisen_for_controles(delta):
 	if Input.is_action_just_pressed("ui_up"):
 		train_head.remove_cart(4)
 
-
 func _on_train_head_points_recived(points):
 	GlobalData.score = points
 	pass # Replace with function body.

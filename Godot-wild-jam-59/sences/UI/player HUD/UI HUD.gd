@@ -41,7 +41,7 @@ func update_ui(button):
 	pass
 
 func update_money():
-	$"Info HUD/score and money/VBoxContainer/MarginContainer/Money".text = "Money: "+str(GlobalData.money)
+	$"Info HUD/score and money/VBoxContainer/MarginContainer/Money".text = "Money: $"+str(GlobalData.money)
 	pass
 func update_score():
 	$"Info HUD/score and money/VBoxContainer/MarginContainer/Score".text = "Score: "+str(GlobalData.score)

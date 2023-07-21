@@ -1,14 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://vjoupg6f5jg0"]
+[gd_scene load_steps=5 format=3 uid="uid://vjoupg6f5jg0"]
 
 [ext_resource type="Script" path="res://sences/Trains/Player/player_controler.gd" id="1_eq25v"]
 [ext_resource type="PackedScene" uid="uid://uvh015smr05p" path="res://sences/Trains/base_train_head.tscn" id="2_q2rpj"]
 [ext_resource type="PackedScene" uid="uid://byxyjlwoqlrg1" path="res://sences/UI/player HUD/UI HUD.tscn" id="3_poh2m"]
+[ext_resource type="Texture2D" uid="uid://264whlywxj80" path="res://assets/traintrain4.png" id="4_ppri4"]
 
 [node name="Player Train" type="Node2D"]
 script = ExtResource("1_eq25v")
 
 [node name="UI box" type="Node2D" parent="."]
-position = Vector2(-2.89679e-05, 0)
+position = Vector2(9, 35)
 
 [node name="shop HUD" parent="UI box" node_paths=PackedStringArray("train_head") instance=ExtResource("3_poh2m")]
 anchors_preset = 0
@@ -33,13 +34,14 @@ remote_path = NodePath("../../../UI box")
 update_rotation = false
 update_scale = false
 
-[node name="Sprite2D" type="Sprite2D" parent="Train head"]
+[node name="Sprite2D2" type="Sprite2D" parent="Train head"]
+visible = false
 texture_filter = 1
-position = Vector2(-0.750001, 31.52)
-rotation = 3.14159
-scale = Vector2(1.32, 1.32)
+position = Vector2(-5.96046e-07, 25)
+scale = Vector2(2.5, 2.4375)
+texture = ExtResource("4_ppri4")
 region_enabled = true
-region_rect = Rect2(9, 101, 25, 47)
+region_rect = Rect2(0, 0, 16, 32)
 
 [connection signal="money_recived" from="Train head" to="." method="_on_train_head_money_recived"]
 [connection signal="points_recived" from="Train head" to="." method="_on_train_head_points_recived"]

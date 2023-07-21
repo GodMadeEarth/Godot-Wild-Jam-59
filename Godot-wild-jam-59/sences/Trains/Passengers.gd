@@ -6,7 +6,7 @@ signal money_gained(money:int)
 @export var bonus_multiplyer:float = 3.0
 @export var money_value = 3
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	pass # Replace with function body.
 
