@@ -15,6 +15,10 @@ run/main_scene="res://sences/game.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalData="*res://public scripts/Global data.gd"
+
 [input]
 
 Move_L={

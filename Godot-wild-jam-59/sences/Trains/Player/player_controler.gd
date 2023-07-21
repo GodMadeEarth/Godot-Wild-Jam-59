@@ -11,6 +11,7 @@ func _ready():
 func _process(delta):
 	lisen_for_controles(delta)
 	pass
+
 func lisen_for_controles(delta):
 	#Movement controls
 	if Input.is_action_pressed("Move_L"):
@@ -27,5 +28,9 @@ func lisen_for_controles(delta):
 		print("made cart")
 		train_head.add_cart()
 	if Input.is_action_just_pressed("ui_up"):
-		print("Cart removed")
-		train_head.remove_cart(3)
+		train_head.remove_cart(4)
+
+
+func _on_train_head_points_recived(points):
+	GlobalData.score = points
+	pass # Replace with function body.

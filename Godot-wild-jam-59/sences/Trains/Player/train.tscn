@@ -9,6 +9,7 @@ script = ExtResource("1_eq25v")
 
 [node name="UI box" type="Node2D" parent="."]
 position = Vector2(-2.89679e-05, 0)
+scale = Vector2(1.3, 1.3)
 
 [node name="shop HUD" parent="UI box" node_paths=PackedStringArray("train_head") instance=ExtResource("3_poh2m")]
 offset_left = -535.0
@@ -22,7 +23,7 @@ train_head = NodePath("../../Train head")
 [node name="Train head" parent="." instance=ExtResource("2_q2rpj")]
 
 [node name="Camera2D2" type="Camera2D" parent="Train head"]
-zoom = Vector2(0.25, 0.25)
+zoom = Vector2(0.7, 0.7)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Train head/Camera2D2"]
 remote_path = NodePath("../../../UI box")
@@ -36,3 +37,5 @@ rotation = 3.14159
 scale = Vector2(1.32, 1.32)
 region_enabled = true
 region_rect = Rect2(9, 101, 25, 47)
+
+[connection signal="points_recived" from="Train head" to="." method="_on_train_head_points_recived"]

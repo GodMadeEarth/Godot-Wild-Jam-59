@@ -36,7 +36,6 @@ func state_manager():
 			active_state = train_states.DASH
 		elif collider is Train_Station or collider is Train_Head:
 			active_state = train_states.CHASE
-#			target_pos = collider
 		elif sensor() is StaticBody2D:
 			active_state = train_states.WONDER
 	elif collider == null:

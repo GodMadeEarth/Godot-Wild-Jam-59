@@ -1,23 +1,31 @@
 extends Node2D
 
+signal points_gained(points:int)
+signal money_gained(money:int)
+@export var point_value:int = 5
+@export var bonus_multiplyer:float = 3.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
-
 func manage_passengers(area):
 	var stations:Array[Node] = area.get_parent().get_parent().get_children()
 	stations.erase(area.get_parent())
-	
+	var color_matches = 0
+	var bonus = 0
 	for passenger in get_children():
 		if not passenger.visible:
 			passenger.visible = true
 			passenger.modulate = stations.pick_random().modulate
-		
 		if passenger.modulate == area.get_parent().modulate:
+			color_matches+=1
+			emit_signal("points_gained",point_value)
 			passenger.visible = false
-
+			
+	if color_matches >= get_children().size()/2:
+		bonus = round((point_value*bonus_multiplyer)*color_matches)
+		emit_signal("points_gained",bonus)
 
 func _on_area_2d_area_entered(area):
 	if area.get_parent() is Train_Station:
