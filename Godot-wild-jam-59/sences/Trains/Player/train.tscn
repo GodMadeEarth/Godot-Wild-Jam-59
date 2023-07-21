@@ -2,20 +2,24 @@
 
 [ext_resource type="Script" path="res://sences/Trains/Player/player_controler.gd" id="1_eq25v"]
 [ext_resource type="PackedScene" uid="uid://uvh015smr05p" path="res://sences/Trains/base_train_head.tscn" id="2_q2rpj"]
-[ext_resource type="PackedScene" uid="uid://byxyjlwoqlrg1" path="res://sences/UI/player HUD/shop HUD.tscn" id="3_poh2m"]
+[ext_resource type="PackedScene" uid="uid://byxyjlwoqlrg1" path="res://sences/UI/player HUD/UI HUD.tscn" id="3_poh2m"]
 
 [node name="Player Train" type="Node2D"]
 script = ExtResource("1_eq25v")
 
 [node name="UI box" type="Node2D" parent="."]
 position = Vector2(-2.89679e-05, 0)
-scale = Vector2(1.3, 1.3)
 
 [node name="shop HUD" parent="UI box" node_paths=PackedStringArray("train_head") instance=ExtResource("3_poh2m")]
-offset_left = -535.0
-offset_top = -270.0
-offset_right = -535.0
-offset_bottom = -270.0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -640.0
+offset_top = -360.0
+offset_right = -640.0
+offset_bottom = -360.0
+grow_horizontal = 1
+grow_vertical = 1
 train_head = NodePath("../../Train head")
 
 [node name="dead carts" type="Node2D" parent="."]
@@ -23,7 +27,6 @@ train_head = NodePath("../../Train head")
 [node name="Train head" parent="." instance=ExtResource("2_q2rpj")]
 
 [node name="Camera2D2" type="Camera2D" parent="Train head"]
-zoom = Vector2(0.7, 0.7)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Train head/Camera2D2"]
 remote_path = NodePath("../../../UI box")

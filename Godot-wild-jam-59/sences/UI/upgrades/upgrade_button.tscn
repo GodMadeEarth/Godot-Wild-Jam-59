@@ -32,7 +32,7 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
 [sub_resource type="Theme" id="Theme_glguo"]
-Label/font_sizes/font_size = 18
+Label/font_sizes/font_size = 25
 Label/styles/normal = SubResource("StyleBoxFlat_ftlrl")
 
 [sub_resource type="Theme" id="Theme_wvrjf"]
@@ -65,11 +65,14 @@ size_flags_vertical = 4
 layout_mode = 2
 
 [node name="item_name" type="Label" parent="upgrade_button/VBoxContainer"]
+custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
 theme = SubResource("Theme_glguo")
 text = "Upgrade 1"
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="price" type="Label" parent="upgrade_button/VBoxContainer"]
 layout_mode = 2

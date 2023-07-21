@@ -4,6 +4,7 @@ extends Control
 @export var train_head:Train_Head
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$"Info HUD/Game timer".timer_on = true
 	$"purchest window".visible = false
 	GlobalData.update_money.connect(update_money)
 	GlobalData.update_score.connect(update_score)

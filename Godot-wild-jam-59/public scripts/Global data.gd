@@ -3,6 +3,8 @@ extends Node
 signal update_score
 signal update_money
 
+var countdown_timer:Countdown_Timer
+
 var score:int = 0:
 	set(bonus): 
 		score += bonus
@@ -21,3 +23,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func countdown_stoppped():
+	print("The count down has stopped!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")

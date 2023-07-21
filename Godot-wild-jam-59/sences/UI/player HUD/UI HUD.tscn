@@ -1,11 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://byxyjlwoqlrg1"]
+[gd_scene load_steps=13 format=3 uid="uid://byxyjlwoqlrg1"]
 
-[ext_resource type="Script" path="res://sences/UI/player HUD/shop HUD.gd" id="1_ssi0j"]
-[ext_resource type="PackedScene" uid="uid://bq0go4q4e1qy0" path="res://sences/UI/upgrades/speed/speed_upgrade.tscn" id="2_knqbg"]
-[ext_resource type="PackedScene" uid="uid://de0n5vosd3qxo" path="res://sences/UI/upgrades/dash cooldown/dash cooldown.tscn" id="2_r6vso"]
-[ext_resource type="PackedScene" uid="uid://c70wos34on6fi" path="res://sences/UI/upgrades/dash duration/dash duration.tscn" id="3_lm1rd"]
-[ext_resource type="PackedScene" uid="uid://cjj2d0x5txorg" path="res://sences/UI/upgrades/dash speed/dash speed.tscn" id="3_ps16c"]
-[ext_resource type="PackedScene" uid="uid://deqjrejmk1jmt" path="res://sences/UI/upgrades/create cart/create cart.tscn" id="4_wr804"]
+[ext_resource type="Script" path="res://sences/UI/player HUD/UI HUD.gd" id="1_yabby"]
+[ext_resource type="PackedScene" uid="uid://cjj2d0x5txorg" path="res://sences/UI/upgrades/dash speed/dash speed.tscn" id="2_jod3r"]
+[ext_resource type="PackedScene" uid="uid://de0n5vosd3qxo" path="res://sences/UI/upgrades/dash cooldown/dash cooldown.tscn" id="3_phn33"]
+[ext_resource type="PackedScene" uid="uid://c70wos34on6fi" path="res://sences/UI/upgrades/dash duration/dash duration.tscn" id="4_qcs3s"]
+[ext_resource type="PackedScene" uid="uid://bq0go4q4e1qy0" path="res://sences/UI/upgrades/speed/speed_upgrade.tscn" id="5_i42rs"]
+[ext_resource type="PackedScene" uid="uid://deqjrejmk1jmt" path="res://sences/UI/upgrades/create cart/create cart.tscn" id="6_ca20p"]
+[ext_resource type="Script" path="res://sences/UI/player HUD/Game timer.gd" id="7_fy4fk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4x6h"]
 bg_color = Color(0, 0, 0, 1)
@@ -51,101 +52,109 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ssi0j")
+script = ExtResource("1_yabby")
 
 [node name="purchest window" type="Control" parent="."]
-visible = false
+layout_mode = 1
 anchors_preset = 0
-offset_left = 256.0
-offset_right = 1536.0
-offset_bottom = 576.0
+offset_left = 416.0
+offset_top = 10.0
+offset_right = 1182.0
+offset_bottom = 378.0
 scale = Vector2(0.5, 0.5)
 metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="purchest window"]
 layout_mode = 2
-offset_left = 128.0
-offset_right = 1152.0
-offset_bottom = 224.0
+offset_left = -2.0
+offset_right = 762.0
+offset_bottom = 192.0
 color = Color(0.227451, 0.619608, 0.454902, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="purchest window"]
 layout_mode = 0
-offset_left = 142.0
-offset_top = 24.0
-offset_right = 1130.0
-offset_bottom = 199.0
+offset_left = -2.0
+offset_top = -32.0
+offset_right = 748.0
+offset_bottom = 196.0
 mouse_filter = 2
 
-[node name="dash speed" parent="purchest window/HBoxContainer" instance=ExtResource("3_ps16c")]
+[node name="dash speed" parent="purchest window/HBoxContainer" instance=ExtResource("2_jod3r")]
+custom_minimum_size = Vector2(0, 180)
 layout_mode = 2
 size_flags_horizontal = 7
-size_flags_vertical = 5
+size_flags_vertical = 7
 
-[node name="dash cooldown" parent="purchest window/HBoxContainer" instance=ExtResource("2_r6vso")]
+[node name="dash cooldown" parent="purchest window/HBoxContainer" instance=ExtResource("3_phn33")]
+custom_minimum_size = Vector2(0, 180)
 layout_mode = 2
 size_flags_horizontal = 7
-size_flags_vertical = 5
+size_flags_vertical = 7
 
-[node name="dash duration" parent="purchest window/HBoxContainer" instance=ExtResource("3_lm1rd")]
+[node name="dash duration" parent="purchest window/HBoxContainer" instance=ExtResource("4_qcs3s")]
+custom_minimum_size = Vector2(0, 180)
 layout_mode = 2
 size_flags_horizontal = 7
-size_flags_vertical = 5
+size_flags_vertical = 7
 
-[node name="speed_upgrade" parent="purchest window/HBoxContainer" instance=ExtResource("2_knqbg")]
+[node name="speed_upgrade" parent="purchest window/HBoxContainer" instance=ExtResource("5_i42rs")]
+custom_minimum_size = Vector2(0, 180)
 layout_mode = 2
 size_flags_horizontal = 7
-size_flags_vertical = 5
+size_flags_vertical = 7
 
-[node name="create cart" parent="purchest window/HBoxContainer" instance=ExtResource("4_wr804")]
+[node name="create cart" parent="purchest window/HBoxContainer" instance=ExtResource("6_ca20p")]
+custom_minimum_size = Vector2(0, 180)
 layout_mode = 2
-size_flags_horizontal = 7
-size_flags_vertical = 5
+size_flags_horizontal = 3
+size_flags_vertical = 7
 
 [node name="tool_tip_box" type="Polygon2D" parent="purchest window"]
-visible = false
-position = Vector2(576, 521)
+position = Vector2(512, 504)
 scale = Vector2(1.3125, 1.5)
 color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(-329.143, -59.3333, -24.381, -59.3333, 0, -59.3333, 24.3809, -59.3333, 426.667, -59.3333, 438.857, -80.6667, 438.857, -176.667, 426.667, -187.333, -329.143, -187.333, -341.333, -176.667, -341.333, -70)
+polygon = PackedVector2Array(-329.143, -90.6666, 134.095, -90.6666, 146.286, -112, 146.286, -192, 134.095, -202.667, -329.143, -202.667, -341.333, -192, -341.333, -101.333)
 metadata/_edit_group_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="purchest window/tool_tip_box"]
-offset_left = -317.0
-offset_top = -177.0
-offset_right = 414.0
-offset_bottom = -72.0
+offset_left = -316.952
+offset_top = -186.667
+offset_right = 122.048
+offset_bottom = -106.667
 
 [node name="Label" type="Label" parent="purchest window/tool_tip_box/MarginContainer"]
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_font_sizes/font_size = 22
-text = "Lorem ipsum dolor sit amet,
-consectetur adipiscing elit,
-sed do eiusmod tempor
-incididunt ut labore et."
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"
 autowrap_mode = 2
 
 [node name="Info HUD" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 1154.0
-offset_bottom = 647.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
+metadata/_edit_group_ = true
 
 [node name="shop button" type="Button" parent="Info HUD"]
 layout_mode = 0
-offset_left = 960.0
-offset_top = 512.0
-offset_right = 1088.0
-offset_bottom = 576.0
+offset_left = 1128.0
+offset_top = 632.0
+offset_right = 1256.0
+offset_bottom = 696.0
 text = "Shop"
 
 [node name="boost bar" type="Control" parent="Info HUD"]
 visible = false
-anchors_preset = 0
-offset_left = 1.0
-offset_top = 423.0
-offset_right = 106.0
-offset_bottom = 560.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="Info HUD/boost bar"]
@@ -171,8 +180,9 @@ show_percentage = false
 
 [node name="score and money" type="MarginContainer" parent="Info HUD"]
 layout_mode = 0
+offset_top = 64.0
 offset_right = 202.0
-offset_bottom = 79.0
+offset_bottom = 143.0
 
 [node name="ColorRect" type="ColorRect" parent="Info HUD/score and money"]
 layout_mode = 2
@@ -199,5 +209,28 @@ text = "Score: 0000"
 layout_mode = 2
 size_flags_vertical = 8
 text = "Money: $0000"
+
+[node name="Game timer" type="VBoxContainer" parent="Info HUD"]
+layout_mode = 0
+offset_left = 16.0
+offset_right = 176.0
+offset_bottom = 66.0
+theme_override_constants/separation = -10
+script = ExtResource("7_fy4fk")
+time = 5
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Info HUD/Game timer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Time Left"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Info HUD/Game timer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Info HUD/shop button" to="." method="_on_button_pressed"]
