@@ -36,6 +36,8 @@ center_of_mass_mode = 1
 gravity_scale = 0.0
 linear_damp = 10.0
 script = ExtResource("1_jylut")
+metadata/_edit_vertical_guides_ = [-11.0, 11.0]
+metadata/_edit_horizontal_guides_ = [-56.0, -28.0]
 
 [node name="Polygon2D2" type="Polygon2D" parent="."]
 position = Vector2(-3, 16)
@@ -45,11 +47,12 @@ polygon = PackedVector2Array(0, -4.17021, 0, 54.2127, 24, 54.2127, 24, -4.17021)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-8, -16)
-polygon = PackedVector2Array(-7, 44, 23, 44, 23, -6, 19, -9, 8, -12, -3, -9, -7, -6)
+polygon = PackedVector2Array(-7, 38, -3, 41, 8, 44, 19, 41, 23, 38, 23, -6, 19, -9, 8, -12, -3, -9, -7, -6)
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
 position = Vector2(0, 33)
 node_a = NodePath("..")
+disable_collision = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
