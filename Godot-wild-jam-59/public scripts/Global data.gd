@@ -2,7 +2,7 @@ extends Node
 
 signal update_score
 signal update_money
-
+signal game_over
 var score:int = 0:
 	set(bonus): 
 		score += bonus
@@ -20,4 +20,5 @@ func _process(delta):
 	pass
 
 func countdown_stoppped():
+	emit_signal("game_over")
 	print("The count down has stopped!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")

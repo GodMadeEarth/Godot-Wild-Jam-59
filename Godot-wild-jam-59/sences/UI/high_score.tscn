@@ -1,0 +1,123 @@
+[gd_scene load_steps=9 format=3 uid="uid://bwfu0sgflnkcm"]
+
+[ext_resource type="Texture2D" uid="uid://7y4yt1us8ydw" path="res://assets/panel background.png" id="1_4tesp"]
+[ext_resource type="Script" path="res://sences/UI/high_score.gd" id="1_6n80u"]
+
+[sub_resource type="Theme" id="Theme_m1jno"]
+Label/font_sizes/font_size = 25
+VBoxContainer/constants/separation = 13
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4qgy"]
+bg_color = Color(0.0745098, 0.0901961, 0.145098, 1)
+border_width_right = 20
+border_width_bottom = 15
+border_color = Color(0.133333, 0.145098, 0.215686, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
+shadow_offset = Vector2(5, -5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdyjf"]
+bg_color = Color(0.392157, 0.427451, 0.596078, 1)
+border_width_right = 20
+border_width_bottom = 15
+border_color = Color(0.133333, 0.145098, 0.215686, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
+shadow_offset = Vector2(5, -5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_78udy"]
+bg_color = Color(0.258824, 0.286275, 0.419608, 1)
+border_width_right = 20
+border_width_bottom = 15
+border_color = Color(0.133333, 0.145098, 0.215686, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
+shadow_offset = Vector2(5, -5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j21wg"]
+bg_color = Color(0.631373, 0.662745, 0.803922, 1)
+border_width_right = 20
+border_width_bottom = 15
+border_color = Color(0.133333, 0.145098, 0.215686, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
+shadow_offset = Vector2(5, -5)
+
+[sub_resource type="Theme" id="Theme_2fv5p"]
+Button/styles/disabled = SubResource("StyleBoxFlat_y4qgy")
+Button/styles/hover = SubResource("StyleBoxFlat_jdyjf")
+Button/styles/normal = SubResource("StyleBoxFlat_78udy")
+Button/styles/pressed = SubResource("StyleBoxFlat_j21wg")
+
+[node name="High score" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6n80u")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_left = 1032.0
+offset_top = -3.0
+offset_right = 1726.0
+offset_bottom = 592.0
+rotation = 1.5708
+texture = ExtResource("1_4tesp")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 538.0
+offset_top = 18.0
+offset_right = 920.0
+offset_bottom = 124.0
+theme_override_font_sizes/font_size = 75
+text = "High score"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 508.0
+offset_top = 131.0
+offset_right = 958.0
+offset_bottom = 619.0
+theme = SubResource("Theme_m1jno")
+
+[node name="Current score" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Score: 0000000"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "1st: 0000000"
+
+[node name="return btm" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme = SubResource("Theme_2fv5p")
+text = "Return to menu"
+
+[connection signal="button_up" from="VBoxContainer/return btm" to="." method="_on_return_btm_button_up"]

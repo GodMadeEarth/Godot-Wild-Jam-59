@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://byxyjlwoqlrg1"]
+[gd_scene load_steps=15 format=3 uid="uid://byxyjlwoqlrg1"]
 
 [ext_resource type="Script" path="res://sences/UI/player HUD/UI HUD.gd" id="1_yabby"]
 [ext_resource type="PackedScene" uid="uid://cjj2d0x5txorg" path="res://sences/UI/upgrades/dash speed/dash speed.tscn" id="2_jod3r"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bq0go4q4e1qy0" path="res://sences/UI/upgrades/speed/speed_upgrade.tscn" id="5_i42rs"]
 [ext_resource type="PackedScene" uid="uid://deqjrejmk1jmt" path="res://sences/UI/upgrades/create cart/create cart.tscn" id="6_ca20p"]
 [ext_resource type="Script" path="res://sences/UI/player HUD/Game timer.gd" id="7_fy4fk"]
+[ext_resource type="PackedScene" uid="uid://bwfu0sgflnkcm" path="res://sences/UI/high_score.tscn" id="9_pgjic"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4x6h"]
 bg_color = Color(0, 0, 0, 1)
@@ -233,7 +234,7 @@ offset_right = 176.0
 offset_bottom = 66.0
 theme_override_constants/separation = -10
 script = ExtResource("7_fy4fk")
-time = 25
+time = 1
 metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="Info HUD/Game timer"]
@@ -248,5 +249,13 @@ theme_override_font_sizes/font_size = 25
 text = "00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="High score" parent="." instance=ExtResource("9_pgjic")]
+visible = false
+layout_mode = 1
+offset_left = -91.0
+offset_top = 23.0
+offset_right = -91.0
+offset_bottom = 23.0
 
 [connection signal="pressed" from="Info HUD/shop button" to="." method="_on_button_pressed"]

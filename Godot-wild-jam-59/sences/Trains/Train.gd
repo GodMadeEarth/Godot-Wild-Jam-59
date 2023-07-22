@@ -12,7 +12,7 @@ var pintjoint_connected_notifier:int=0
 
 var can_dash:bool = true
 var is_dashing:bool = false
-
+var lock_controls = false
 
 @export var rotationStats:Dictionary = {
 	"Base Value" : PI/1.5,
@@ -82,6 +82,7 @@ var train_length:int:
 		return trainLenghtStats["Base Value"] + (trainLenghtStats["Increment Value By"] * trainLenghtStats["Total Purchaces"])
 
 func _ready():
+	GlobalData.game_over.connect(stop_train)
 	set_physics_process(true)
 
 func _physics_process(delta):	
@@ -177,3 +178,8 @@ func score_changed(points):
 	
 func money_changed(money):
 	emit_signal("money_recived",money)
+
+func stop_train():
+	lock_controls = true
+	speedStats["Base Value"] = 0
+	

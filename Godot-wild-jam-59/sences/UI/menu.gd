@@ -4,6 +4,12 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Settings.get_node("MarginContainer/VBoxContainer/exit btm").button_up.connect(_on_exit_btm_up)
+	var tween = create_tween()
+	tween.tween_property($Node2D,"position",Vector2(633,200),1)
+#	tween.tween_property($Node2D,"rotation",0,1)
+	tween.tween_property($Node2D,"position",Vector2(633,100),1)
+	tween.set_loops()
+	tween.play()
 	pass # Replace with function body.
 
 

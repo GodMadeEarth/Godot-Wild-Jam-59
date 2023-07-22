@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://sences/UI/menu.gd" id="1_03esf"]
 [ext_resource type="PackedScene" uid="uid://cs5novvm8n76w" path="res://sences/UI/settings.tscn" id="2_3iat8"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4qgy"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trmc0"]
 bg_color = Color(0.0745098, 0.0901961, 0.145098, 1)
 border_width_right = 20
 border_width_bottom = 15
@@ -16,7 +16,7 @@ corner_radius_bottom_left = 10
 shadow_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
 shadow_offset = Vector2(5, -5)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdyjf"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1u1dt"]
 bg_color = Color(0.392157, 0.427451, 0.596078, 1)
 border_width_right = 20
 border_width_bottom = 15
@@ -29,7 +29,7 @@ corner_radius_bottom_left = 10
 shadow_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
 shadow_offset = Vector2(5, -5)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_78udy"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nk2nb"]
 bg_color = Color(0.258824, 0.286275, 0.419608, 1)
 border_width_right = 20
 border_width_bottom = 15
@@ -42,7 +42,7 @@ corner_radius_bottom_left = 10
 shadow_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
 shadow_offset = Vector2(5, -5)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j21wg"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kgf7q"]
 bg_color = Color(0.631373, 0.662745, 0.803922, 1)
 border_width_right = 20
 border_width_bottom = 15
@@ -56,10 +56,10 @@ shadow_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
 shadow_offset = Vector2(5, -5)
 
 [sub_resource type="Theme" id="Theme_m53os"]
-Button/styles/disabled = SubResource("StyleBoxFlat_y4qgy")
-Button/styles/hover = SubResource("StyleBoxFlat_jdyjf")
-Button/styles/normal = SubResource("StyleBoxFlat_78udy")
-Button/styles/pressed = SubResource("StyleBoxFlat_j21wg")
+Button/styles/disabled = SubResource("StyleBoxFlat_trmc0")
+Button/styles/hover = SubResource("StyleBoxFlat_1u1dt")
+Button/styles/normal = SubResource("StyleBoxFlat_nk2nb")
+Button/styles/pressed = SubResource("StyleBoxFlat_kgf7q")
 
 [node name="menu" type="Control"]
 layout_mode = 3
@@ -125,12 +125,14 @@ theme = SubResource("Theme_m53os")
 text = "Quit
 "
 
-[node name="Title" type="Label" parent="."]
-layout_mode = 0
-offset_left = 343.0
-offset_top = 54.0
-offset_right = 995.0
-offset_bottom = 194.0
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(633, 146)
+
+[node name="Title" type="Label" parent="Node2D"]
+offset_left = -306.0
+offset_top = -76.0
+offset_right = 346.0
+offset_bottom = 64.0
 theme_override_font_sizes/font_size = 100
 text = "GAME TITLE!!!"
 horizontal_alignment = 1

@@ -4,7 +4,8 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_process(true)
-		
+	for i in 3:
+		train_head.add_cart()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -13,6 +14,8 @@ func _process(delta):
 	pass
 
 func lisen_for_controles(delta):
+	if train_head.lock_controls:
+		return
 	#Movement controls
 	if Input.is_action_pressed("Move_L"):
 		train_head.set_dir(-1)
