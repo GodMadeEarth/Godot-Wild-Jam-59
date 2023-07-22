@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://byxyjlwoqlrg1"]
+[gd_scene load_steps=14 format=3 uid="uid://byxyjlwoqlrg1"]
 
 [ext_resource type="Script" path="res://sences/UI/player HUD/UI HUD.gd" id="1_yabby"]
 [ext_resource type="PackedScene" uid="uid://cjj2d0x5txorg" path="res://sences/UI/upgrades/dash speed/dash speed.tscn" id="2_jod3r"]
+[ext_resource type="Texture2D" uid="uid://7y4yt1us8ydw" path="res://assets/panel background.png" id="2_l8r6h"]
 [ext_resource type="PackedScene" uid="uid://de0n5vosd3qxo" path="res://sences/UI/upgrades/dash cooldown/dash cooldown.tscn" id="3_phn33"]
 [ext_resource type="PackedScene" uid="uid://c70wos34on6fi" path="res://sences/UI/upgrades/dash duration/dash duration.tscn" id="4_qcs3s"]
 [ext_resource type="PackedScene" uid="uid://bq0go4q4e1qy0" path="res://sences/UI/upgrades/speed/speed_upgrade.tscn" id="5_i42rs"]
@@ -59,18 +60,29 @@ visible = false
 layout_mode = 1
 anchors_preset = 0
 offset_left = 416.0
-offset_top = 10.0
+offset_top = 26.0
 offset_right = 1182.0
-offset_bottom = 378.0
+offset_bottom = 394.0
 scale = Vector2(0.5, 0.5)
 metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="purchest window"]
+visible = false
 layout_mode = 2
 offset_left = -2.0
+offset_top = -4.0
 offset_right = 762.0
-offset_bottom = 192.0
-color = Color(0.227451, 0.619608, 0.454902, 1)
+offset_bottom = 252.0
+color = Color(0.305882, 0.333333, 0.458824, 1)
+
+[node name="TextureRect" type="TextureRect" parent="purchest window"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -72.0
+offset_top = -24.0
+offset_right = 804.0
+offset_bottom = 264.0
+texture = ExtResource("2_l8r6h")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="purchest window"]
 layout_mode = 0
@@ -112,7 +124,7 @@ size_flags_vertical = 7
 
 [node name="tool_tip_box" type="Polygon2D" parent="purchest window"]
 visible = false
-position = Vector2(512, 504)
+position = Vector2(512, 572)
 scale = Vector2(1.3125, 1.5)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-329.143, -90.6666, 134.095, -90.6666, 146.286, -112, 146.286, -192, 134.095, -202.667, -329.143, -202.667, -341.333, -192, -341.333, -101.333)
@@ -136,6 +148,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -8.0
+offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2

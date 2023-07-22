@@ -1,12 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://c70wos34on6fi"]
+[gd_scene load_steps=6 format=3 uid="uid://c70wos34on6fi"]
 
 [ext_resource type="Script" path="res://sences/UI/upgrades/dash duration/dash duration.gd" id="1_ji6g6"]
-[ext_resource type="PackedScene" uid="uid://dubaug3im8co3" path="res://sences/UI/upgrade_button.tscn" id="2_bidkc"]
+[ext_resource type="PackedScene" uid="uid://dubaug3im8co3" path="res://sences/UI/upgrades/upgrade_button.tscn" id="2_bidkc"]
+[ext_resource type="Texture2D" uid="uid://dbb58affhi2kt" path="res://assets/icons/dash time/tile006.png" id="3_taei7"]
+[ext_resource type="Texture2D" uid="uid://dgcsxxop5ujfb" path="res://assets/icons/dash time/tile026.png" id="4_wln7k"]
+[ext_resource type="Texture2D" uid="uid://d65ey3rq0136" path="res://assets/icons/dash time/tile016.png" id="5_e38rd"]
 
 [node name="dash duration" type="MarginContainer"]
 script = ExtResource("1_ji6g6")
 
 [node name="upgrade_button" parent="." instance=ExtResource("2_bidkc")]
+custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
+texture_normal = ExtResource("3_taei7")
+texture_pressed = ExtResource("4_wln7k")
+texture_hover = ExtResource("5_e38rd")
 item_name = "Dash Duration"
 description = "Increases  how long a dash last"

@@ -1,0 +1,120 @@
+[gd_scene load_steps=7 format=3 uid="uid://cs5novvm8n76w"]
+
+[ext_resource type="Texture2D" uid="uid://7y4yt1us8ydw" path="res://assets/panel background.png" id="1_je22p"]
+[ext_resource type="Script" path="res://sences/UI/settings.gd" id="1_nhwoa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hes3c"]
+bg_color = Color(1, 0.396078, 0.329412, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_65jw0"]
+bg_color = Color(0.996078, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yful1"]
+bg_color = Color(0.647059, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+
+[sub_resource type="Theme" id="Theme_ege2w"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 25
+Button/styles/hover = SubResource("StyleBoxFlat_hes3c")
+Button/styles/normal = SubResource("StyleBoxFlat_65jw0")
+Button/styles/pressed = SubResource("StyleBoxFlat_yful1")
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nhwoa")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 448.0
+offset_right = 1003.0
+offset_bottom = 447.0
+rotation = 1.5708
+texture = ExtResource("1_je22p")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 64.0
+offset_right = 392.0
+offset_bottom = 502.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="sound" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="sound" type="Label" parent="MarginContainer/VBoxContainer/sound"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "Sound"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sound slider" type="HSlider" parent="MarginContainer/VBoxContainer/sound"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 1
+
+[node name="Music" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="music" type="Label" parent="MarginContainer/VBoxContainer/Music"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="music slider" type="HSlider" parent="MarginContainer/VBoxContainer/Music"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 1
+
+[node name="exit btm" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme = SubResource("Theme_ege2w")
+text = "Exit"
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/sound/sound slider" to="." method="_on_sound_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Music/music slider" to="." method="_on_music_slider_value_changed"]
+[connection signal="button_up" from="MarginContainer/VBoxContainer/exit btm" to="." method="_on_exit_btm_button_up"]

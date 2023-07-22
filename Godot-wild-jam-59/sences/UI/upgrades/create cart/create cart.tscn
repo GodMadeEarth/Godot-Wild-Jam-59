@@ -1,13 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://deqjrejmk1jmt"]
+[gd_scene load_steps=6 format=3 uid="uid://deqjrejmk1jmt"]
 
 [ext_resource type="Script" path="res://sences/UI/upgrades/create cart/create cart.gd" id="1_ukwbn"]
 [ext_resource type="PackedScene" uid="uid://dubaug3im8co3" path="res://sences/UI/upgrades/upgrade_button.tscn" id="2_a3udm"]
+[ext_resource type="Texture2D" uid="uid://c83taokt2ljax" path="res://assets/icons/add cart/tile000.png" id="3_3epaw"]
+[ext_resource type="Texture2D" uid="uid://ckcny4itnrbxh" path="res://assets/icons/add cart/tile020.png" id="4_lgucq"]
+[ext_resource type="Texture2D" uid="uid://duotubie0hl2o" path="res://assets/icons/add cart/tile010.png" id="5_21mxl"]
 
 [node name="create cart" type="MarginContainer"]
 script = ExtResource("1_ukwbn")
 
 [node name="upgrade_button" parent="." instance=ExtResource("2_a3udm")]
+custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
+texture_normal = ExtResource("3_3epaw")
+texture_pressed = ExtResource("4_lgucq")
+texture_hover = ExtResource("5_21mxl")
 item_name = "Add cart"
 description = "Adds another cart to the end of your train"
 

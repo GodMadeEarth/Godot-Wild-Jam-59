@@ -1,12 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://de0n5vosd3qxo"]
+[gd_scene load_steps=6 format=3 uid="uid://de0n5vosd3qxo"]
 
 [ext_resource type="Script" path="res://sences/UI/upgrades/dash cooldown/dash cooldown.gd" id="1_xx1tw"]
-[ext_resource type="PackedScene" uid="uid://dubaug3im8co3" path="res://sences/UI/upgrade_button.tscn" id="2_akkns"]
+[ext_resource type="PackedScene" uid="uid://dubaug3im8co3" path="res://sences/UI/upgrades/upgrade_button.tscn" id="2_akkns"]
+[ext_resource type="Texture2D" uid="uid://cdb0kypbexmwh" path="res://assets/icons/dash cooldown/tile008.png" id="3_laemm"]
+[ext_resource type="Texture2D" uid="uid://bivoeuln8kvrs" path="res://assets/icons/dash cooldown/tile018.png" id="4_fhwt6"]
+[ext_resource type="Texture2D" uid="uid://6paqq11m0e8d" path="res://assets/icons/dash cooldown/tile028.png" id="5_cvice"]
 
 [node name="dash cooldown" type="MarginContainer"]
 script = ExtResource("1_xx1tw")
 
 [node name="upgrade_button" parent="." instance=ExtResource("2_akkns")]
+custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
+texture_normal = ExtResource("3_laemm")
+texture_pressed = ExtResource("5_cvice")
+texture_hover = ExtResource("4_fhwt6")
 item_name = "Dash cooldown"
 description = "Lowers the time it takes for the dash to rechatge"

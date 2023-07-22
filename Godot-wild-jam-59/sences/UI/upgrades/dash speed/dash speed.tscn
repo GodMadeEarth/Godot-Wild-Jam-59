@@ -1,12 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjj2d0x5txorg"]
+[gd_scene load_steps=6 format=3 uid="uid://cjj2d0x5txorg"]
 
 [ext_resource type="Script" path="res://sences/UI/upgrades/dash speed/dash speed.gd" id="1_wrs81"]
 [ext_resource type="PackedScene" uid="uid://dubaug3im8co3" path="res://sences/UI/upgrades/upgrade_button.tscn" id="2_pcjp8"]
+[ext_resource type="Texture2D" uid="uid://by8d457d7ic6h" path="res://assets/icons/dash speed boost/tile004.png" id="3_jovnd"]
+[ext_resource type="Texture2D" uid="uid://bi0su5ansh0bk" path="res://assets/icons/dash speed boost/tile014.png" id="4_jfhys"]
+[ext_resource type="Texture2D" uid="uid://dlvlvjoy88t34" path="res://assets/icons/dash speed boost/tile024.png" id="5_6ur8c"]
 
 [node name="dash speed" type="MarginContainer"]
+offset_right = 125.0
+offset_bottom = 125.0
 script = ExtResource("1_wrs81")
 
 [node name="upgrade_button" parent="." instance=ExtResource("2_pcjp8")]
+texture_filter = 1
+custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
+size_flags_horizontal = 1
+texture_normal = ExtResource("3_jovnd")
+texture_pressed = ExtResource("5_6ur8c")
+texture_hover = ExtResource("4_jfhys")
 item_name = "Dash speed up"
-description = "Increases the speed of the dash"
+description = "Dash speed up Increases the speed of the dash"

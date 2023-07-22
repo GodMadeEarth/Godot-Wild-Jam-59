@@ -1,23 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dubaug3im8co3"]
+[gd_scene load_steps=6 format=3 uid="uid://dubaug3im8co3"]
 
-[ext_resource type="Texture2D" uid="uid://oytgvdls8ek3" path="res://icon.svg" id="1_vj1ng"]
+[ext_resource type="Texture2D" uid="uid://duotubie0hl2o" path="res://assets/icons/add cart/tile010.png" id="1_k26j3"]
 [ext_resource type="Script" path="res://sences/UI/upgrades/upgrade_button.gd" id="2_kglau"]
-
-[sub_resource type="Gradient" id="Gradient_410lu"]
-offsets = PackedFloat32Array(0, 0.469388, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.345098, 0.780392, 0.231373, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_o1661"]
-gradient = SubResource("Gradient_410lu")
-fill_to = Vector2(0.995238, 1)
-
-[sub_resource type="Gradient" id="Gradient_4do72"]
-offsets = PackedFloat32Array(0, 0.557823, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.909804, 0.92549, 0.109804, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ywa24"]
-gradient = SubResource("Gradient_4do72")
-fill_from = Vector2(0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ftlrl"]
 bg_color = Color(0.129412, 0.129412, 0.129412, 1)
@@ -32,7 +16,7 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
 [sub_resource type="Theme" id="Theme_glguo"]
-Label/font_sizes/font_size = 25
+Label/font_sizes/font_size = 20
 Label/styles/normal = SubResource("StyleBoxFlat_ftlrl")
 
 [sub_resource type="Theme" id="Theme_wvrjf"]
@@ -40,25 +24,24 @@ Label/font_sizes/font_size = 29
 Label/styles/normal = SubResource("StyleBoxFlat_ftlrl")
 
 [node name="upgrade_button" type="TextureButton"]
-offset_left = 23.0
-offset_top = 23.0
-offset_right = 151.0
-offset_bottom = 151.0
-size_flags_horizontal = 4
+texture_filter = 1
+custom_minimum_size = Vector2(125, 125)
+offset_top = 42.0
+offset_right = 128.0
+offset_bottom = 170.0
+size_flags_horizontal = 3
 size_flags_vertical = 4
-texture_normal = ExtResource("1_vj1ng")
-texture_pressed = SubResource("GradientTexture2D_o1661")
-texture_hover = SubResource("GradientTexture2D_ywa24")
+texture_normal = ExtResource("1_k26j3")
 stretch_mode = 5
 script = ExtResource("2_kglau")
 
 [node name="upgrade_button" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(175, 175)
 layout_mode = 0
-offset_left = -23.0
-offset_top = -23.0
-offset_right = 152.0
-offset_bottom = 174.0
+offset_left = -13.0
+offset_top = -1.0
+offset_right = 162.0
+offset_bottom = 215.0
 size_flags_vertical = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="upgrade_button"]
@@ -77,7 +60,7 @@ autowrap_mode = 2
 [node name="price" type="Label" parent="upgrade_button/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 10
+size_flags_vertical = 8
 theme = SubResource("Theme_wvrjf")
 text = "Price"
 
