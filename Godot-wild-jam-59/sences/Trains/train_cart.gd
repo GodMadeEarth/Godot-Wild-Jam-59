@@ -5,7 +5,7 @@ var is_connected_to_head = false
 
 func _on_area_2d_area_entered(area):
 	if area.get_parent() is Train_Head and area.get_parent().is_dashing: 
-		if is_connected_to_head:
+		if is_connected_to_head and not get_parent().get_node("Train head").is_dashing:
 			var personal_train_head = get_parent().get_node("Train head")
 			await personal_train_head.remove_cart(get_index())
 		elif !is_connected_to_head:

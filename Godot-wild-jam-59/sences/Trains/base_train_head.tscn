@@ -12,7 +12,13 @@ absorbent = true
 position = Vector2(9, 35)
 motion_mode = 1
 script = ExtResource("1_6jy5h")
-cart_spacing = 20
+cart_spacing = 25
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(-3, 53)
+scale = Vector2(0.25, 0.616618)
+color = Color(0.658824, 0.266667, 0.0235294, 1)
+polygon = PackedVector2Array(0, -8.34042, 0, 50.0425, 24, 50.0425, 24, -8.34042)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -22,18 +28,12 @@ texture = ExtResource("2_64d0r")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 32)
 
-[node name="Polygon2D2" type="Polygon2D" parent="."]
-position = Vector2(-2.99997, 58.1429)
-scale = Vector2(0.25, 0.616618)
-color = Color(0.658824, 0.266667, 0.0235294, 1)
-polygon = PackedVector2Array(0, -8.34042, 0, 50.0425, 24, 50.0425, 24, -8.34042)
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-8, 49)
 polygon = PackedVector2Array(-7.99997, -18, -7.99997, 7, 24, 7, 24, -18, 8.00003, -41)
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
-position = Vector2(2.89679e-05, 70)
+position = Vector2(3.5767e-07, 66)
 node_a = NodePath("..")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
