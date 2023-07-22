@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://7y4yt1us8ydw" path="res://assets/panel background.png" id="1_je22p"]
 [ext_resource type="Script" path="res://sences/UI/settings.gd" id="1_nhwoa"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pkddc"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bit51"]
 bg_color = Color(1, 0.396078, 0.329412, 1)
 border_width_left = 5
 border_width_top = 5
@@ -14,7 +14,7 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfdxw"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjwht"]
 bg_color = Color(0.996078, 0, 0, 1)
 border_width_left = 5
 border_width_top = 5
@@ -25,7 +25,7 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fl0o4"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_35jek"]
 bg_color = Color(0.647059, 0, 0, 1)
 border_width_left = 5
 border_width_top = 5
@@ -39,9 +39,9 @@ corner_radius_bottom_right = 5
 [sub_resource type="Theme" id="Theme_ege2w"]
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/font_sizes/font_size = 25
-Button/styles/hover = SubResource("StyleBoxFlat_pkddc")
-Button/styles/normal = SubResource("StyleBoxFlat_dfdxw")
-Button/styles/pressed = SubResource("StyleBoxFlat_fl0o4")
+Button/styles/hover = SubResource("StyleBoxFlat_bit51")
+Button/styles/normal = SubResource("StyleBoxFlat_fjwht")
+Button/styles/pressed = SubResource("StyleBoxFlat_35jek")
 
 [node name="Settings" type="Control"]
 layout_mode = 3

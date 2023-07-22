@@ -379,4 +379,13 @@ scale = Vector2(2, 2)
 position = Vector2(342, 3078)
 
 [node name="Enemy Train" parent="." instance=ExtResource("3_1icv6")]
-position = Vector2(154, 2949)
+position = Vector2(162, 2986)
+
+[node name="Enemy Train2" parent="." instance=ExtResource("3_1icv6")]
+position = Vector2(534, 3015)
+
+[node name="Enemy Train3" parent="." instance=ExtResource("3_1icv6")]
+position = Vector2(564, 3353)
+
+[node name="Enemy Train4" parent="." instance=ExtResource("3_1icv6")]
+position = Vector2(165, 3341)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://8csw5s2qojtp"]
+[gd_scene load_steps=9 format=3 uid="uid://8csw5s2qojtp"]
 
 [ext_resource type="Script" path="res://sences/UI/menu.gd" id="1_03esf"]
 [ext_resource type="PackedScene" uid="uid://cs5novvm8n76w" path="res://sences/UI/settings.tscn" id="2_3iat8"]
+[ext_resource type="PackedScene" uid="uid://xpggaps8uf6l" path="res://sences/UI/how_to_play_window.tscn" id="3_b6vfr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trmc0"]
 bg_color = Color(0.0745098, 0.0901961, 0.145098, 1)
@@ -68,9 +69,9 @@ script = ExtResource("1_03esf")
 
 [node name="menu btn container" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 319.0
+offset_left = 1447.0
 offset_top = 391.0
-offset_right = 1035.0
+offset_right = 2421.0
 offset_bottom = 480.0
 metadata/_edit_group_ = true
 
@@ -80,11 +81,11 @@ polygon = PackedVector2Array(-69, 0, -133, 40, -69, 88, 3, 88, 3, 0)
 
 [node name="link" type="Polygon2D" parent="menu btn container"]
 color = Color(0.533333, 0.356863, 0.0980392, 1)
-polygon = PackedVector2Array(715, 32, 715, 64, 3, 56, 3, 32)
+polygon = PackedVector2Array(864, 32, 864, 64, 3, 56, 3, 32)
 
 [node name="tail" type="Polygon2D" parent="menu btn container"]
 color = Color(0.192157, 0.211765, 0.321569, 1)
-polygon = PackedVector2Array(835, 0, 835, 24, 859, 24, 859, 64, 835, 64, 835, 88, 715, 88, 715, 0)
+polygon = PackedVector2Array(1072, 1, 1072, 25, 1096, 25, 1096, 65, 1072, 65, 1072, 89, 968, 89, 968, 1)
 
 [node name="start" type="Button" parent="menu btn container"]
 custom_minimum_size = Vector2(200, 0)
@@ -118,6 +119,22 @@ layout_mode = 2
 size_flags_vertical = 4
 color = Color(1, 1, 1, 0)
 
+[node name="How to play" type="Button" parent="menu btn container"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = SubResource("Theme_m53os")
+text = "How to play"
+
+[node name="MarginContainer3" type="MarginContainer" parent="menu btn container"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="menu btn container/MarginContainer3"]
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 2
+size_flags_vertical = 4
+color = Color(1, 1, 1, 0)
+
 [node name="quit" type="Button" parent="menu btn container"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
@@ -146,6 +163,15 @@ offset_top = 174.0
 offset_right = 445.0
 offset_bottom = 174.0
 
+[node name="how to play window" parent="." instance=ExtResource("3_b6vfr")]
+visible = false
+layout_mode = 1
+offset_left = 125.0
+offset_top = 219.0
+offset_right = 125.0
+offset_bottom = 219.0
+
 [connection signal="button_up" from="menu btn container/start" to="." method="_on_start_button_up"]
 [connection signal="button_up" from="menu btn container/settings" to="." method="_on_settings_button_up"]
+[connection signal="button_up" from="menu btn container/How to play" to="." method="_on_how_to_play_button_up"]
 [connection signal="button_up" from="menu btn container/quit" to="." method="_on_quit_button_up"]
