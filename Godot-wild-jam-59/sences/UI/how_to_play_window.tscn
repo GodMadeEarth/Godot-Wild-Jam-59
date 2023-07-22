@@ -81,7 +81,9 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 16
 text = "Use \"A\" to turn left and \"D\"  to turn right.
 
-Press \"shift\" or \"Space\" to activate dash to smash into other carts and to protected your carts from being crashed into.
+Press \"Shift\" or \"Space\" to activate dash. 
+
+Dash to smash into other carts and protect your carts from being crashed into.
 
 Try to deliver as many passengers before the time is up.
 

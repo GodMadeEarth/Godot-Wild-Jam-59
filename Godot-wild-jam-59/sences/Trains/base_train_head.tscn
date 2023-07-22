@@ -63,4 +63,7 @@ polygon = PackedVector2Array(-16, 59, -16, 57, 16, 57, 16, 59, 2.89679e-05, 64)
 [node name="dash_timer" type="Timer" parent="."]
 one_shot = true
 
+[node name="dash_cooldown" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]

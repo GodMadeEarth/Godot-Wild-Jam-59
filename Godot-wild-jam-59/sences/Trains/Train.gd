@@ -4,6 +4,7 @@ signal points_recived(points)
 signal money_recived(money)
 signal dash_started
 signal dash_ended
+signal dash_is_ready
 const  train_cart = preload("res://sences/Trains/train_cart.tscn")
 
 var rotation_direction:float= 0.0 : set = set_dir, get = get_dir
@@ -86,6 +87,7 @@ var train_length:int:
 func _ready():
 	GlobalData.game_over.connect(stop_train)
 	set_physics_process(true)
+	$dash_cooldown.wait_time = dash_cooldown
 
 func _physics_process(delta):	
 	move_straight(delta)
@@ -163,9 +165,11 @@ func dash():
 		can_dash = false
 		is_dashing = true
 		$dash_timer.start(dash_duration)
-		await get_tree().create_timer(dash_cooldown).timeout
+		$dash_cooldown.start(dash_cooldown)
+		await $dash_cooldown.timeout
+#		get_tree().create_timer(dash_cooldown).timeout
 		can_dash = true
-
+		emit_signal("dash_is_ready")
 
 	pass
 
