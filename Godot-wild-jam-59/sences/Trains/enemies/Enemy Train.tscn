@@ -12,6 +12,7 @@ one_shot = true
 [node name="dead carts" type="Node2D" parent="."]
 
 [node name="Train head" parent="." instance=ExtResource("1_s8jih")]
+position = Vector2(0, 0)
 
 [node name="RayCast2D" type="RayCast2D" parent="Train head"]
 target_position = Vector2(0, -500)

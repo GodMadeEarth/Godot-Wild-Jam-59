@@ -12,13 +12,15 @@ absorbent = true
 position = Vector2(9, 35)
 motion_mode = 1
 script = ExtResource("1_6jy5h")
-cart_spacing = 25
+cart_spacing = 20
 
-[node name="Polygon2D2" type="Polygon2D" parent="."]
-position = Vector2(-3, 53)
+[node name="ramming effect" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(-45, 15)
 scale = Vector2(0.25, 0.616618)
-color = Color(0.658824, 0.266667, 0.0235294, 1)
-polygon = PackedVector2Array(0, -8.34042, 0, 50.0425, 24, 50.0425, 24, -8.34042)
+color = Color(0.984314, 0.376471, 0.286275, 1)
+polygon = PackedVector2Array(272, 22.7045, 272, 48.659, 272, 87.5745, 208, 87.5745, 208, 22.7045, 176, -16.2175, 144, 22.7045, 144, 87.5745, 80, 87.5745, 80, 22.7045, 176, -42.1655)
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -28,12 +30,18 @@ texture = ExtResource("2_64d0r")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 32)
 
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(-2.99997, 58.1429)
+scale = Vector2(0.25, 0.616618)
+color = Color(0.658824, 0.266667, 0.0235294, 1)
+polygon = PackedVector2Array(0, -8.34042, 0, 50.0425, 24, 50.0425, 24, -8.34042)
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-8, 49)
 polygon = PackedVector2Array(-7.99997, -18, -7.99997, 7, 24, 7, 24, -18, 8.00003, -41)
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
-position = Vector2(3.5767e-07, 66)
+position = Vector2(2.89679e-05, 70)
 node_a = NodePath("..")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
