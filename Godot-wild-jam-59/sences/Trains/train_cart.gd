@@ -12,6 +12,7 @@ func _on_area_2d_area_entered(area):
 			var train:Train_Head = area.get_parent()
 			for i in $Passengers.get_children():
 				if i.visible:
+					
 					train.emit_signal("money_recived",$Passengers.money_value)
 
 			queue_free()
