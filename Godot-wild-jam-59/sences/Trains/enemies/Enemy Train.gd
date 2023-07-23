@@ -75,13 +75,28 @@ func state_machine(delta):
 #			print("Looking at: "+str(look_dir))
 			pass
 		train_states.CHASE:
+			var colliders = sensor()
 			train_head.rotation_direction = 0
+			if colliders[0] == Train_Cart: train_head.rotation_direction = -1
+			if colliders[1] == Train_Cart: train_head.rotation_direction = -.1
+			if colliders[2] == Train_Cart: train_head.rotation_direction = 0
+			if colliders[3] == Train_Cart: train_head.rotation_direction = .1
+			if colliders[4] == Train_Cart: train_head.rotation_direction = 1
+			
+			train_head.rotation = train_head.rotation+(train_head.rotation_direction*train_head.rotation_speed*delta)
 			pass
 		train_states.DASH:
 			train_head.dash()
 		train_states.AVOID:
-			while look_dir == 0:
-				look_dir = randi_range(-1,1)
+			var colliders = sensor()
+			train_head.rotation_direction = 0
+			if colliders[0] == StaticBody2D: train_head.rotation_direction = .1
+			if colliders[1] == StaticBody2D: train_head.rotation_direction = 1
+
+			if colliders[3] == StaticBody2D: train_head.rotation_direction = -1
+			if colliders[4] == StaticBody2D: train_head.rotation_direction = -.1
+
+			if colliders[2] == StaticBody2D: train_head.rotation_direction = randi_range(-1,1) + train_head.rotation_direction * 5
 
 			train_head.rotation_direction = look_dir
 			train_head.rotation = train_head.rotation+(train_head.rotation_direction*train_head.rotation_speed*delta)
