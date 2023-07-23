@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7y4yt1us8ydw"
-path="res://.godot/imported/panel background.png-facdbbbb8a12768f514c59518a42418b.ctex"
+uid="uid://1bokvifkashm"
+path="res://.godot/imported/streets5.png-5ae00a2c8b9a4fa221c8cbe81081b4d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/panel background.png"
-dest_files=["res://.godot/imported/panel background.png-facdbbbb8a12768f514c59518a42418b.ctex"]
+source_file="res://assets/tile maps/streets5.png"
+dest_files=["res://.godot/imported/streets5.png-5ae00a2c8b9a4fa221c8cbe81081b4d2.ctex"]
 
 [params]
 

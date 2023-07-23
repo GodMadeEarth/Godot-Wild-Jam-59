@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://sences/Trains/Player/player_controler.gd" id="1_eq25v"]
 [ext_resource type="PackedScene" uid="uid://uvh015smr05p" path="res://sences/Trains/base_train_head.tscn" id="2_q2rpj"]
 [ext_resource type="PackedScene" uid="uid://byxyjlwoqlrg1" path="res://sences/UI/player HUD/UI HUD.tscn" id="3_poh2m"]
-[ext_resource type="Texture2D" uid="uid://264whlywxj80" path="res://assets/traintrain4.png" id="4_ppri4"]
+[ext_resource type="Texture2D" uid="uid://264whlywxj80" path="res://assets/trains/traintrain4.png" id="4_s5umi"]
 
 [node name="Player Train" type="Node2D"]
 script = ExtResource("1_eq25v")
@@ -46,7 +46,7 @@ visible = false
 texture_filter = 1
 position = Vector2(-5.96046e-07, 25)
 scale = Vector2(2.5, 2.4375)
-texture = ExtResource("4_ppri4")
+texture = ExtResource("4_s5umi")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 32)
 

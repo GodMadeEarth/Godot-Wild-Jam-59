@@ -1,8 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://8csw5s2qojtp"]
+[gd_scene load_steps=19 format=3 uid="uid://8csw5s2qojtp"]
 
 [ext_resource type="Script" path="res://sences/UI/menu.gd" id="1_03esf"]
 [ext_resource type="PackedScene" uid="uid://cs5novvm8n76w" path="res://sences/UI/settings.tscn" id="2_3iat8"]
+[ext_resource type="Texture2D" uid="uid://v30a8nvu2se3" path="res://assets/UI/linktrainmenu.png" id="2_e42tc"]
+[ext_resource type="Texture2D" uid="uid://tiqdnh230p6f" path="res://assets/decoration/city.png" id="2_p37e5"]
+[ext_resource type="Texture2D" uid="uid://bymvw27b6ctua" path="res://assets/decoration/trainstation3.png" id="2_rfbol"]
 [ext_resource type="PackedScene" uid="uid://xpggaps8uf6l" path="res://sences/UI/how_to_play_window.tscn" id="3_b6vfr"]
+[ext_resource type="Texture2D" uid="uid://ditmi64juchc7" path="res://assets/UI/fronttrainmenu.png" id="3_vjtb1"]
+[ext_resource type="Texture2D" uid="uid://deaaexy8l4kq2" path="res://assets/UI/menublock.png" id="4_t686d"]
+[ext_resource type="Texture2D" uid="uid://clhbcbi5enshs" path="res://assets/UI/menublockclicked.png" id="5_jowq5"]
+[ext_resource type="FontFile" uid="uid://cop47ewylhigo" path="res://assets/fonts/baskvl.ttf" id="6_gfkdp"]
+[ext_resource type="Texture2D" uid="uid://d2h05os34krn3" path="res://assets/UI/backmenu.png" id="7_hqfx1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trmc0"]
 bg_color = Color(0.0745098, 0.0901961, 0.145098, 1)
@@ -62,95 +70,256 @@ Button/styles/hover = SubResource("StyleBoxFlat_1u1dt")
 Button/styles/normal = SubResource("StyleBoxFlat_nk2nb")
 Button/styles/pressed = SubResource("StyleBoxFlat_kgf7q")
 
+[sub_resource type="Theme" id="Theme_lvo1d"]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 35
+Label/fonts/font = ExtResource("6_gfkdp")
+
+[sub_resource type="Theme" id="Theme_mgcs0"]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(1, 0, 0, 1)
+Label/constants/shadow_offset_x = 3
+Label/font_sizes/font_size = 100
+Label/fonts/font = ExtResource("6_gfkdp")
+
 [node name="menu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_03esf")
 
-[node name="menu btn container" type="HBoxContainer" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 1447.0
-offset_top = 391.0
-offset_right = 2421.0
-offset_bottom = 480.0
+offset_right = 1297.0
+offset_bottom = 741.0
+color = Color(0.230469, 0.253906, 0.378906, 1)
+
+[node name="image container" type="Node2D" parent="."]
+
+[node name="City5" type="Sprite2D" parent="image container"]
+texture_filter = 1
+position = Vector2(503, 234)
+scale = Vector2(4.625, 4.625)
+texture = ExtResource("2_p37e5")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="City" type="Sprite2D" parent="image container"]
+texture_filter = 1
+position = Vector2(452, 331)
+scale = Vector2(4.625, 4.625)
+texture = ExtResource("2_p37e5")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="City6" type="Sprite2D" parent="image container"]
+texture_filter = 1
+position = Vector2(814, 231)
+scale = Vector2(4.625, 4.625)
+texture = ExtResource("2_p37e5")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="City3" type="Sprite2D" parent="image container"]
+texture_filter = 1
+position = Vector2(882, 331)
+scale = Vector2(4.625, 4.625)
+texture = ExtResource("2_p37e5")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="City2" type="Sprite2D" parent="image container"]
+texture_filter = 1
+position = Vector2(490, 313)
+scale = Vector2(4.625, 4.625)
+texture = ExtResource("2_p37e5")
+region_enabled = true
+region_rect = Rect2(48, 16, 16, 16)
+
+[node name="City4" type="Sprite2D" parent="image container"]
+texture_filter = 1
+position = Vector2(804, 290)
+scale = Vector2(4.625, 4.625)
+texture = ExtResource("2_p37e5")
+region_enabled = true
+region_rect = Rect2(48, 16, 16, 16)
+
+[node name="Trainstation3" type="Sprite2D" parent="image container"]
+texture_filter = 1
+position = Vector2(657, 355)
+scale = Vector2(7.33333, 7.33333)
+texture = ExtResource("2_rfbol")
+region_enabled = true
+region_rect = Rect2(0, 0, 96, 96)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(1191, 191)
+layout_mode = 0
+offset_left = 1364.0
+offset_top = 460.0
+offset_right = 2560.0
+offset_bottom = 658.0
 metadata/_edit_group_ = true
 
-[node name="head" type="Polygon2D" parent="menu btn container"]
-color = Color(0.192157, 0.211765, 0.321569, 1)
-polygon = PackedVector2Array(-69, 0, -133, 40, -69, 88, 3, 88, 3, 0)
+[node name="link" type="TextureRect" parent="MarginContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(1043, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_e42tc")
 
-[node name="link" type="Polygon2D" parent="menu btn container"]
-color = Color(0.533333, 0.356863, 0.0980392, 1)
-polygon = PackedVector2Array(864, 32, 864, 64, 3, 56, 3, 32)
+[node name="menu btn container" type="HBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(1191, 191)
+layout_mode = 2
+metadata/_edit_group_ = true
 
-[node name="tail" type="Polygon2D" parent="menu btn container"]
-color = Color(0.192157, 0.211765, 0.321569, 1)
-polygon = PackedVector2Array(1072, 1, 1072, 25, 1096, 25, 1096, 65, 1072, 65, 1072, 89, 968, 89, 968, 1)
+[node name="head" type="TextureRect" parent="MarginContainer/menu btn container"]
+texture_filter = 1
+custom_minimum_size = Vector2(115, 65)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_vjtb1")
 
-[node name="start" type="Button" parent="menu btn container"]
+[node name="start" type="TextureButton" parent="MarginContainer/menu btn container"]
+texture_filter = 1
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme = SubResource("Theme_m53os")
+texture_normal = ExtResource("4_t686d")
+texture_pressed = ExtResource("5_jowq5")
+texture_hover = ExtResource("5_jowq5")
+texture_disabled = ExtResource("5_jowq5")
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/menu btn container/start"]
+clip_contents = true
+layout_mode = 0
+offset_left = 6.0
+offset_top = 68.0
+offset_right = 194.0
+offset_bottom = 122.0
+
+[node name="Label" type="Label" parent="MarginContainer/menu btn container/start/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 5
+theme = SubResource("Theme_lvo1d")
 text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="menu btn container"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/menu btn container"]
 custom_minimum_size = Vector2(25, 0)
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="menu btn container/MarginContainer"]
-custom_minimum_size = Vector2(50, 20)
-layout_mode = 2
-size_flags_vertical = 4
-color = Color(1, 1, 1, 0)
-
-[node name="settings" type="Button" parent="menu btn container"]
+[node name="settings" type="TextureButton" parent="MarginContainer/menu btn container"]
+texture_filter = 1
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme = SubResource("Theme_m53os")
+texture_normal = ExtResource("4_t686d")
+texture_pressed = ExtResource("5_jowq5")
+texture_hover = ExtResource("5_jowq5")
+texture_disabled = ExtResource("5_jowq5")
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/menu btn container/settings"]
+clip_contents = true
+offset_left = 6.0
+offset_top = 68.0
+offset_right = 194.0
+offset_bottom = 122.0
+
+[node name="Label" type="Label" parent="MarginContainer/menu btn container/settings/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 5
+theme = SubResource("Theme_lvo1d")
 text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="menu btn container"]
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/menu btn container"]
 custom_minimum_size = Vector2(25, 0)
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="menu btn container/MarginContainer2"]
-custom_minimum_size = Vector2(50, 20)
-layout_mode = 2
-size_flags_vertical = 4
-color = Color(1, 1, 1, 0)
-
-[node name="How to play" type="Button" parent="menu btn container"]
+[node name="How to play" type="TextureButton" parent="MarginContainer/menu btn container"]
+texture_filter = 1
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme = SubResource("Theme_m53os")
+texture_normal = ExtResource("4_t686d")
+texture_pressed = ExtResource("5_jowq5")
+texture_hover = ExtResource("5_jowq5")
+texture_disabled = ExtResource("5_jowq5")
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/menu btn container/How to play"]
+clip_contents = true
+offset_left = 6.0
+offset_top = 68.0
+offset_right = 194.0
+offset_bottom = 122.0
+
+[node name="Label" type="Label" parent="MarginContainer/menu btn container/How to play/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 5
+theme = SubResource("Theme_lvo1d")
 text = "How to play"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="MarginContainer3" type="MarginContainer" parent="menu btn container"]
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/menu btn container"]
 custom_minimum_size = Vector2(25, 0)
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="menu btn container/MarginContainer3"]
-custom_minimum_size = Vector2(50, 20)
-layout_mode = 2
-size_flags_vertical = 4
-color = Color(1, 1, 1, 0)
-
-[node name="quit" type="Button" parent="menu btn container"]
+[node name="quit" type="TextureButton" parent="MarginContainer/menu btn container"]
+texture_filter = 1
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme = SubResource("Theme_m53os")
-text = "Quit
-"
+texture_normal = ExtResource("4_t686d")
+texture_pressed = ExtResource("5_jowq5")
+texture_hover = ExtResource("5_jowq5")
+texture_disabled = ExtResource("5_jowq5")
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/menu btn container/quit"]
+clip_contents = true
+offset_left = 6.0
+offset_top = 68.0
+offset_right = 194.0
+offset_bottom = 122.0
+
+[node name="Label" type="Label" parent="MarginContainer/menu btn container/quit/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 5
+theme = SubResource("Theme_lvo1d")
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/menu btn container"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="Tail" type="TextureRect" parent="MarginContainer/menu btn container"]
+texture_filter = 1
+custom_minimum_size = Vector2(70, 65)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("7_hqfx1")
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(633, 146)
 
 [node name="Title" type="Label" parent="Node2D"]
 offset_left = -306.0
-offset_top = -76.0
-offset_right = 346.0
-offset_bottom = 64.0
-theme_override_font_sizes/font_size = 100
+offset_top = 202.0
+offset_right = 366.0
+offset_bottom = 342.0
+theme = SubResource("Theme_mgcs0")
 text = "GAME TITLE!!!"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -171,7 +340,7 @@ offset_top = 219.0
 offset_right = 125.0
 offset_bottom = 219.0
 
-[connection signal="button_up" from="menu btn container/start" to="." method="_on_start_button_up"]
-[connection signal="button_up" from="menu btn container/settings" to="." method="_on_settings_button_up"]
-[connection signal="button_up" from="menu btn container/How to play" to="." method="_on_how_to_play_button_up"]
-[connection signal="button_up" from="menu btn container/quit" to="." method="_on_quit_button_up"]
+[connection signal="button_up" from="MarginContainer/menu btn container/start" to="." method="_on_start_button_up"]
+[connection signal="button_up" from="MarginContainer/menu btn container/settings" to="." method="_on_settings_button_up"]
+[connection signal="button_up" from="MarginContainer/menu btn container/How to play" to="." method="_on_how_to_play_button_up"]
+[connection signal="button_up" from="MarginContainer/menu btn container/quit" to="." method="_on_quit_button_up"]

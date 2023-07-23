@@ -7,7 +7,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if get_node("../..").train_head:
 		var train_head  = get_node("../..").train_head
 		var timer:Timer = train_head.get_node("dash_cooldown")

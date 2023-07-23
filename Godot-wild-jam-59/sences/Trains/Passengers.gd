@@ -27,7 +27,7 @@ func manage_passengers(area):
 			emit_signal("points_gained",point_value)
 			passenger.visible = false
 			
-	if color_matches >= get_children().size()/2:
+	if color_matches >= floor(get_children().size()/2):
 		bonus = round((point_value*bonus_multiplyer)*color_matches)
 		emit_signal("points_gained",bonus)
 

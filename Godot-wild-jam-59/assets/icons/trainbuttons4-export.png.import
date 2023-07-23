@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd8m6r7i1awj0"
-path="res://.godot/imported/train.jpg-1f6803aa64e55a1bdbff6db0abcd3f66.ctex"
+uid="uid://cr7ne6d5twan6"
+path="res://.godot/imported/trainbuttons4-export.png-7ec540c438ceeb7841d91c84e276e47d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/train.jpg"
-dest_files=["res://.godot/imported/train.jpg-1f6803aa64e55a1bdbff6db0abcd3f66.ctex"]
+source_file="res://assets/icons/trainbuttons4-export.png"
+dest_files=["res://.godot/imported/trainbuttons4-export.png-7ec540c438ceeb7841d91c84e276e47d.ctex"]
 
 [params]
 

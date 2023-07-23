@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bwfu0sgflnkcm"]
 
-[ext_resource type="Texture2D" uid="uid://7y4yt1us8ydw" path="res://assets/panel background.png" id="1_4tesp"]
 [ext_resource type="Script" path="res://sences/UI/high_score.gd" id="1_6n80u"]
+[ext_resource type="Texture2D" uid="uid://7y4yt1us8ydw" path="res://assets/UI/panel background.png" id="2_wvru4"]
 
 [sub_resource type="Theme" id="Theme_m1jno"]
 Label/font_sizes/font_size = 25
@@ -82,7 +82,7 @@ offset_top = -3.0
 offset_right = 1726.0
 offset_bottom = 592.0
 rotation = 1.5708
-texture = ExtResource("1_4tesp")
+texture = ExtResource("2_wvru4")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2

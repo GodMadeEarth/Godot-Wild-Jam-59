@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpwestpynfnpb"
-path="res://.godot/imported/streets26.png-a015d265d826a3f32465034b2aa8e373.ctex"
+uid="uid://v30a8nvu2se3"
+path="res://.godot/imported/linktrainmenu.png-17bd6c49e2a3a93e53251dade3d08ac8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/streets26.png"
-dest_files=["res://.godot/imported/streets26.png-a015d265d826a3f32465034b2aa8e373.ctex"]
+source_file="res://assets/UI/linktrainmenu.png"
+dest_files=["res://.godot/imported/linktrainmenu.png-17bd6c49e2a3a93e53251dade3d08ac8.ctex"]
 
 [params]
 

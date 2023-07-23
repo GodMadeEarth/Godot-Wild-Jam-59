@@ -16,9 +16,6 @@ var money:int = 0 :
 func _ready():
 	pass # Replace with function body.
 
-func _process(delta):
-	pass
-
 func countdown_stoppped():
 	emit_signal("game_over")
 	print("The count down has stopped!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://sences/UI/player HUD/UI HUD.gd" id="1_yabby"]
 [ext_resource type="PackedScene" uid="uid://cjj2d0x5txorg" path="res://sences/UI/upgrades/dash speed/dash speed.tscn" id="2_jod3r"]
-[ext_resource type="Texture2D" uid="uid://7y4yt1us8ydw" path="res://assets/panel background.png" id="2_l8r6h"]
+[ext_resource type="Texture2D" uid="uid://7y4yt1us8ydw" path="res://assets/UI/panel background.png" id="2_yv87y"]
 [ext_resource type="PackedScene" uid="uid://de0n5vosd3qxo" path="res://sences/UI/upgrades/dash cooldown/dash cooldown.tscn" id="3_phn33"]
 [ext_resource type="PackedScene" uid="uid://c70wos34on6fi" path="res://sences/UI/upgrades/dash duration/dash duration.tscn" id="4_qcs3s"]
 [ext_resource type="PackedScene" uid="uid://bq0go4q4e1qy0" path="res://sences/UI/upgrades/speed/speed_upgrade.tscn" id="5_i42rs"]
@@ -50,7 +50,7 @@ offset_left = -72.0
 offset_top = -24.0
 offset_right = 804.0
 offset_bottom = 264.0
-texture = ExtResource("2_l8r6h")
+texture = ExtResource("2_yv87y")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="purchest window"]
 layout_mode = 0

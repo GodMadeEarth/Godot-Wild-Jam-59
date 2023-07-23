@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp6mpjf1tjj6j"
-path="res://.godot/imported/traintrain6.png-a5e449882ed585a36ec213897a8e7a04.ctex"
+uid="uid://7y4yt1us8ydw"
+path="res://.godot/imported/panel background.png-51dcc257044f7c0b5663d98fa5fd393a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/traintrain6.png"
-dest_files=["res://.godot/imported/traintrain6.png-a5e449882ed585a36ec213897a8e7a04.ctex"]
+source_file="res://assets/UI/panel background.png"
+dest_files=["res://.godot/imported/panel background.png-51dcc257044f7c0b5663d98fa5fd393a.ctex"]
 
 [params]
 

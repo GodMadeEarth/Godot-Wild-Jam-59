@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cs5novvm8n76w"]
 
-[ext_resource type="Texture2D" uid="uid://7y4yt1us8ydw" path="res://assets/panel background.png" id="1_je22p"]
 [ext_resource type="Script" path="res://sences/UI/settings.gd" id="1_nhwoa"]
+[ext_resource type="Texture2D" uid="uid://7y4yt1us8ydw" path="res://assets/UI/panel background.png" id="2_ns2cf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bit51"]
 bg_color = Color(1, 0.396078, 0.329412, 1)
@@ -59,7 +59,7 @@ offset_left = 448.0
 offset_right = 1003.0
 offset_bottom = 447.0
 rotation = 1.5708
-texture = ExtResource("1_je22p")
+texture = ExtResource("2_ns2cf")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0

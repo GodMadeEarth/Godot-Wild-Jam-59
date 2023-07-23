@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://xpggaps8uf6l"]
 
 [ext_resource type="Script" path="res://sences/UI/how_to_play.gd" id="1_4kqn4"]
-[ext_resource type="Texture2D" uid="uid://7y4yt1us8ydw" path="res://assets/panel background.png" id="2_2tnxk"]
+[ext_resource type="Texture2D" uid="uid://7y4yt1us8ydw" path="res://assets/UI/panel background.png" id="2_bmi1s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pkddc"]
 bg_color = Color(1, 0.396078, 0.329412, 1)
@@ -59,7 +59,7 @@ offset_left = 136.0
 offset_top = -1.0
 offset_right = 1039.0
 offset_bottom = 514.0
-texture = ExtResource("2_2tnxk")
+texture = ExtResource("2_bmi1s")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0

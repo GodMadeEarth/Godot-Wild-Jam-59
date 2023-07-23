@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://4icy85h2kksj"]
 
-[ext_resource type="Texture2D" uid="uid://1bokvifkashm" path="res://assets/streets5.png" id="1_apa23"]
 [ext_resource type="PackedScene" uid="uid://vjoupg6f5jg0" path="res://sences/Trains/Player/train.tscn" id="1_f5mae"]
+[ext_resource type="Texture2D" uid="uid://1bokvifkashm" path="res://assets/tile maps/streets5.png" id="1_nq0g3"]
 [ext_resource type="PackedScene" uid="uid://mk8iuk8ytsrl" path="res://sences/train_station.tscn" id="2_k1mfv"]
-[ext_resource type="Texture2D" uid="uid://bpwestpynfnpb" path="res://assets/streets26.png" id="2_wpx4e"]
+[ext_resource type="Texture2D" uid="uid://bpwestpynfnpb" path="res://assets/tile maps/streets26.png" id="2_ucaxs"]
 [ext_resource type="PackedScene" uid="uid://bd280oct5pf2f" path="res://sences/Trains/enemies/Enemy Train.tscn" id="3_1icv6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ccfes"]
-texture = ExtResource("1_apa23")
+texture = ExtResource("1_nq0g3")
 2:0/0 = 0
 2:0/0/terrain_set = 0
 2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -79,7 +79,7 @@ texture = ExtResource("1_apa23")
 0:2/0/terrains_peering_bit/top_right_corner = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_goyfo"]
-texture = ExtResource("2_wpx4e")
+texture = ExtResource("2_ucaxs")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)

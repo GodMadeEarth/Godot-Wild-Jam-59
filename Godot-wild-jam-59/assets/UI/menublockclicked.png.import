@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://264whlywxj80"
-path="res://.godot/imported/traintrain4.png-113975df2ea29d05f4dbc24cb5efbedc.ctex"
+uid="uid://clhbcbi5enshs"
+path="res://.godot/imported/menublockclicked.png-cf1ee4025cbf8e3e28a58811fa67bfa8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/traintrain4.png"
-dest_files=["res://.godot/imported/traintrain4.png-113975df2ea29d05f4dbc24cb5efbedc.ctex"]
+source_file="res://assets/UI/menublockclicked.png"
+dest_files=["res://.godot/imported/menublockclicked.png-cf1ee4025cbf8e3e28a58811fa67bfa8.ctex"]
 
 [params]
 
