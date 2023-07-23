@@ -24,6 +24,7 @@ grow_vertical = 2
 script = ExtResource("1_yabby")
 
 [node name="purchest window" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 0
 offset_left = 416.0
@@ -214,7 +215,7 @@ offset_right = 176.0
 offset_bottom = 66.0
 theme_override_constants/separation = -10
 script = ExtResource("7_fy4fk")
-time = 5
+time = 10
 metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="Info HUD/Game timer"]

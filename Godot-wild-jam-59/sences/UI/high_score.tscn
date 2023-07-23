@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://7y4yt1us8ydw" path="res://assets/UI/panel background.png" id="2_wvru4"]
 
 [sub_resource type="Theme" id="Theme_m1jno"]
-Label/font_sizes/font_size = 25
+Label/font_sizes/font_size = 18
 VBoxContainer/constants/separation = 13
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4qgy"]
@@ -106,11 +106,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Score: 0000000"
 horizontal_alignment = 1
-
-[node name="Score" type="Label" parent="VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "1st: 0000000"
 
 [node name="return btm" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(200, 0)

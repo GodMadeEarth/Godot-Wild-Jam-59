@@ -7,6 +7,7 @@ var active_state:train_states = train_states.WONDER
 var target_pos:Vector2
 
 func _ready():
+	GlobalData.game_over.connect(stop_train)
 	randomize()
 	for i in randi_range(3,10):
 		train_head.add_cart()
@@ -15,13 +16,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-#	if sensor():
-#		global_position = Vector2(1715,2292)
+	if train_head.lock_controls:
+		return
 	state_manager()
 	state_machine(delta)
-#	train_head.set_dir(-1)
-#	train_head.rotation = train_head.rotation+(train_head.rotation_direction*train_head.rotation_speed*delta)
-	pass
 
 func sensor():
 	var results = []
@@ -61,19 +59,15 @@ func state_manager():
 	if colliders.has(StaticBody2D):
 		active_state = train_states.AVOID
 		
-	
-	
-
-
 func state_machine(delta):
 	var look_dir = 0
 	match active_state:
 		train_states.WONDER:
-			if $Timer.is_stopped():
+			if $Timers/Timer.is_stopped():
 				look_dir = randi_range(-1,1)
 				while look_dir == 0:
 					look_dir = randi_range(-1,1)
-				$Timer.start(0.5)
+				$Timers/Timer.start(0.5)
 			train_head.rotation_direction = look_dir
 			train_head.rotation = train_head.rotation+(train_head.rotation_direction*train_head.rotation_speed*delta)
 #			print("Looking at: "+str(look_dir))
@@ -109,15 +103,17 @@ func state_machine(delta):
 #	print("Current state: "+str(active_state))
 	pass
 
-
-
 func _on_upgrade_timer_timeout():
-	var upgrade = randi_range(1,6)
+	var upgrade = randi_range(1,10)
 	if upgrade == 1: train_head.rotationStats["Total Purchaces"] += 1
 	elif upgrade == 2: train_head.speedStats["Total Purchaces"] += 1
 	elif upgrade == 3: train_head.dashDuriationStats["Total Purchaces"] += 1
 	elif upgrade == 4: train_head.dashCooldownStats["Total Purchaces"] += 1
 	elif upgrade == 5: train_head.dashSpeedStats["Total Purchaces"] += 1
-	elif upgrade == 6: train_head.trainLenghtStats["Total Purchaces"] += 1
+	elif upgrade >= 6: train_head.add_cart(); train_head.trainLenghtStats["Total Purchaces"] += 1
 
-	print(9)
+	print(upgrade)
+
+func stop_train():
+	train_head.stop_train()
+	$Timers/UpgradeTimer.stop()

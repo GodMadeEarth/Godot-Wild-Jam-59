@@ -17,6 +17,7 @@ func _on_area_2d_area_entered(area):
 					
 					train.emit_signal("money_recived",$Passengers.money_value)
 			$AudioStreamPlayer2D2.play()
+			train.emit_signal("points_recived",$Passengers.point_value)
 			await $AudioStreamPlayer2D2.finished
 			queue_free()
 	pass # Replace with function body.

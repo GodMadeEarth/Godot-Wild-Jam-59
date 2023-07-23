@@ -422,7 +422,6 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decorations/City/StaticBody2D"]
 position = Vector2(0.181793, -0.181793)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lda5n")
 metadata/_edit_group_ = true
 
@@ -439,7 +438,6 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decorations/City2/StaticBody2D"]
 position = Vector2(0.181793, -0.181793)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lda5n")
 metadata/_edit_group_ = true
 
@@ -456,7 +454,6 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decorations/City7/StaticBody2D"]
 position = Vector2(0.181793, -0.181793)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lda5n")
 metadata/_edit_group_ = true
 
@@ -473,7 +470,6 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decorations/City8/StaticBody2D"]
 position = Vector2(0.181793, -0.181793)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lda5n")
 metadata/_edit_group_ = true
 
@@ -490,7 +486,6 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decorations/City9/StaticBody2D"]
 position = Vector2(0.181793, -0.181793)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lda5n")
 metadata/_edit_group_ = true
 
@@ -507,7 +502,6 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decorations/City10/StaticBody2D"]
 position = Vector2(0.181793, -0.181793)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lda5n")
 metadata/_edit_group_ = true
 
@@ -524,7 +518,6 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decorations/City11/StaticBody2D"]
 position = Vector2(0.181793, -0.181793)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lda5n")
 metadata/_edit_group_ = true
 
@@ -541,7 +534,6 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decorations/City3/StaticBody2D"]
 position = Vector2(0.181793, -0.181793)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lda5n")
 metadata/_edit_group_ = true
 
@@ -558,7 +550,6 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decorations/City4/StaticBody2D"]
 position = Vector2(0.181793, -0.181793)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lda5n")
 metadata/_edit_group_ = true
 
@@ -575,7 +566,6 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decorations/City5/StaticBody2D"]
 position = Vector2(0.181793, -0.181793)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lda5n")
 metadata/_edit_group_ = true
 
@@ -592,7 +582,6 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decorations/City6/StaticBody2D"]
 position = Vector2(0.181793, -0.181793)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lda5n")
 metadata/_edit_group_ = true
 
@@ -609,7 +598,6 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decorations/City12/StaticBody2D"]
 position = Vector2(0.181793, -0.181793)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lda5n")
 metadata/_edit_group_ = true
 
@@ -626,7 +614,6 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decorations/City13/StaticBody2D"]
 position = Vector2(0.181793, -0.181793)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lda5n")
 metadata/_edit_group_ = true
 
@@ -643,7 +630,6 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decorations/City14/StaticBody2D"]
 position = Vector2(0.181793, -0.181793)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lda5n")
 metadata/_edit_group_ = true
 
@@ -654,21 +640,19 @@ position = Vector2(510, 2259)
 position = Vector2(3173, 581)
 
 [node name="Enemy Train2" parent="." instance=ExtResource("3_1icv6")]
-position = Vector2(351, 956)
 position = Vector2(2486, 1349)
 rotation = 0.523598
 
-[node name="Enemy Train2" parent="." instance=ExtResource("3_1icv6")]
+[node name="Enemy Train3" parent="." instance=ExtResource("3_1icv6")]
 position = Vector2(1089, 1403)
 rotation = -0.523598
 
-[node name="Enemy Train3" parent="." instance=ExtResource("3_1icv6")]
+[node name="Enemy Train4" parent="." instance=ExtResource("3_1icv6")]
 position = Vector2(1242, 1745)
 
-[node name="Enemy Train4" parent="." instance=ExtResource("3_1icv6")]
+[node name="Enemy Train5" parent="." instance=ExtResource("3_1icv6")]
 position = Vector2(2397, 1721)
 
-[node name="Enemy Train5" parent="." instance=ExtResource("3_1icv6")]
-position = Vector2(3239, 1673)
+[node name="Enemy Train6" parent="." instance=ExtResource("3_1icv6")]
 position = Vector2(2265, 1934)
 rotation = 2.35619

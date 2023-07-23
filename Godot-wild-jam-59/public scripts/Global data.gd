@@ -1,5 +1,6 @@
 extends Node
 
+
 signal update_score
 signal update_money
 signal game_over
