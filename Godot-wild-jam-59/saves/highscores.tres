@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_u6dow")
-hightscores = Array[int]([2830])
+hightscores = Array[int]([])
