@@ -88,6 +88,7 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 1
+value = 1.0
 
 [node name="Music" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
@@ -106,6 +107,7 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 1
+value = 1.0
 
 [node name="exit btm" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 0)

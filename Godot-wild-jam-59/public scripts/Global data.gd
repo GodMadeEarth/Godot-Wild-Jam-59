@@ -4,6 +4,15 @@ extends Node
 signal update_score
 signal update_money
 signal game_over
+
+var sound_volume = 1.0:
+	set(volume):
+		sound_volume = (volume/100)
+
+var music_volume = 1.0:
+	set(volume):
+		music_volume = (volume/100)
+		
 var score:int = 0:
 	set(bonus): 
 		score += bonus

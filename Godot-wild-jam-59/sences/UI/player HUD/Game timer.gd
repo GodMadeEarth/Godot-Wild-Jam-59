@@ -1,13 +1,13 @@
 extends VBoxContainer
 
 signal timer_stopped
-@export var time = 0
+@export var time = 0.0
 var timer_on = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	timer_stopped.connect(GlobalData.countdown_stoppped)
-#	time =time*60
+	time =time*60
 	pass # Replace with function body.
 
 

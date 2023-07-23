@@ -215,7 +215,7 @@ offset_right = 176.0
 offset_bottom = 66.0
 theme_override_constants/separation = -10
 script = ExtResource("7_fy4fk")
-time = 10
+time = 1.5
 metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="Info HUD/Game timer"]

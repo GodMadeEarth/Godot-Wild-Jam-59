@@ -92,11 +92,6 @@ func _ready():
 func _physics_process(delta):	
 	move_straight(delta)
 	
-func move_arc(delta):
-	velocity = (Vector2.UP.rotated(rotation) * speed*delta) 
-	rotation = rotation+(rotation_direction*rotation_speed*delta)
-	position += velocity
-	
 func move_straight(_delta):
 	new_velocity = (Vector2.UP.rotated(global_rotation) * (speed + (0 if !is_dashing else dash_speed))) 
 	set_velocity(new_velocity)

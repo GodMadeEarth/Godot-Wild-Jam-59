@@ -10,6 +10,8 @@ func _ready():
 	GlobalData.update_score.connect(update_score)
 	GlobalData.game_over.connect(show_score)
 #	$"Info HUD".train_head = train_head
+	GlobalData.update_money.connect(update_money)
+	GlobalData.update_score.connect(update_score)
 	for item in items_cotainer.get_children():
 		item.get_child(0).mouse_entered.connect(display_tool_tip)
 		item.get_child(0).mouse_exited.connect(hide_tool_tip)
@@ -44,8 +46,10 @@ func update_ui(button):
 func update_money():
 	$"Info HUD/score and money/VBoxContainer/MarginContainer/Money".text = "Money: $"+str(GlobalData.money)
 	pass
+
 func update_score():
 	$"Info HUD/score and money/VBoxContainer/MarginContainer/Score".text = "Score: "+str(GlobalData.score)
 	pass
+
 func show_score():
 	$"purchest window".visible = false

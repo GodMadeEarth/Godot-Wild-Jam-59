@@ -3,7 +3,11 @@ extends RigidBody2D
 class_name Train_Cart
 var is_connected_to_head = false
 
-
+func _ready():
+	$"drop off".volume_db *= GlobalData.sound_volume
+	$pickup.volume_db *= GlobalData.sound_volume
+	$AudioStreamPlayer2D2.volume_db *= GlobalData.sound_volume
+	pass
 func _on_area_2d_area_entered(area):
 	if area.get_parent() is Train_Head and area.get_parent().is_dashing: 
 		if is_connected_to_head and not get_parent().get_node("Train head").is_dashing:

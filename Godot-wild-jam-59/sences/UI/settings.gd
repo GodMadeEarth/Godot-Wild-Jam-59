@@ -6,24 +6,24 @@ extends Control
 @onready var sound_slider = $"MarginContainer/VBoxContainer/sound/sound slider"
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GlobalData.sound_volume = sound_slider.value
+	GlobalData.music_volume = music_slider.value
 	music_text.text = "Music: "+str(music_slider.value)
 	sound_text.text = "Sound: "+str(sound_slider.value)
 	pass # Replace with function body.
 
-
-
-
 func _on_music_slider_value_changed(value):
 	music_text.text = "Music: "+str(value)
+	GlobalData.music_volume = value
 	print(value)
 	pass # Replace with function body.
-
 
 func _on_sound_slider_value_changed(value):
 	sound_text.text = "Sound: "+str(value)
+	GlobalData.sound_volume = value
+
 	print(value)
 	pass # Replace with function body.
-
 
 func _on_exit_btm_button_up():
 	visible = false
