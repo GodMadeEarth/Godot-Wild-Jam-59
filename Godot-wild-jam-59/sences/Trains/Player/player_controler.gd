@@ -27,11 +27,11 @@ func lisen_for_controles(delta):
 	if Input.is_action_just_pressed("Dash"):
 		train_head.dash()
 	# Testing controles up arrow remove cart , down arrow to add a cart
-	if Input.is_action_just_pressed("ui_down"):
-		print("made cart")
-		train_head.add_cart()
-	if Input.is_action_just_pressed("ui_up"):
-		train_head.remove_cart(4)
+#	if Input.is_action_just_pressed("ui_down"):
+#		print("made cart")
+#		train_head.add_cart()
+#	if Input.is_action_just_pressed("ui_up"):
+#		train_head.remove_cart(4)
 
 func _on_train_head_points_recived(points):
 	GlobalData.score = points

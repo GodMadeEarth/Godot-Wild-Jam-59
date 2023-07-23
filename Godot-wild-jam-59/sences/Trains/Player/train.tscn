@@ -10,6 +10,7 @@ script = ExtResource("1_eq25v")
 
 [node name="UI box" type="Node2D" parent="."]
 position = Vector2(9, 35)
+scale = Vector2(1.25, 1.25)
 
 [node name="shop HUD" parent="UI box" node_paths=PackedStringArray("train_head") instance=ExtResource("3_poh2m")]
 anchors_preset = 0
@@ -28,13 +29,14 @@ train_head = NodePath("../../Train head")
 [node name="Train head" parent="." instance=ExtResource("2_q2rpj")]
 dashCooldownStats = {
 "Base Cost": 12,
-"Base Value": 5,
+"Base Value": 3,
 "Increment Cost By": 6,
 "Increment Value By": -0.2,
 "Total Purchaces": 0
 }
 
 [node name="Camera2D2" type="Camera2D" parent="Train head"]
+zoom = Vector2(0.75, 0.75)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Train head/Camera2D2"]
 remote_path = NodePath("../../../UI box")

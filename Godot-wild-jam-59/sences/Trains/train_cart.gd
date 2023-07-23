@@ -10,12 +10,14 @@ func _on_area_2d_area_entered(area):
 			var personal_train_head = get_parent().get_node("Train head")
 			await personal_train_head.remove_cart(get_index())
 		elif !is_connected_to_head:
+			
 			var train:Train_Head = area.get_parent()
 			for i in $Passengers.get_children():
 				if i.visible:
 					
 					train.emit_signal("money_recived",$Passengers.money_value)
-
+			$AudioStreamPlayer2D2.play()
+			await $AudioStreamPlayer2D2.finished
 			queue_free()
 	pass # Replace with function body.
 

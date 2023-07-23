@@ -227,6 +227,7 @@ stretch_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/menu btn container/settings"]
 clip_contents = true
+layout_mode = 0
 offset_left = 6.0
 offset_top = 68.0
 offset_right = 194.0
@@ -257,6 +258,7 @@ stretch_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/menu btn container/How to play"]
 clip_contents = true
+layout_mode = 0
 offset_left = 6.0
 offset_top = 68.0
 offset_right = 194.0
@@ -287,6 +289,7 @@ stretch_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/menu btn container/quit"]
 clip_contents = true
+layout_mode = 0
 offset_left = 6.0
 offset_top = 68.0
 offset_right = 194.0
@@ -320,7 +323,7 @@ offset_top = 202.0
 offset_right = 366.0
 offset_bottom = 342.0
 theme = SubResource("Theme_mgcs0")
-text = "GAME TITLE!!!"
+text = "The Crash Station"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -339,6 +342,18 @@ offset_left = 125.0
 offset_top = 219.0
 offset_right = 125.0
 offset_bottom = 219.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 627.0
+offset_right = 172.0
+offset_bottom = 718.0
+theme_override_fonts/font = ExtResource("6_gfkdp")
+text = "Made by
+Timmy soup
+Olivalu
+Iceofspade"
 
 [connection signal="button_up" from="MarginContainer/menu btn container/start" to="." method="_on_start_button_up"]
 [connection signal="button_up" from="MarginContainer/menu btn container/settings" to="." method="_on_settings_button_up"]

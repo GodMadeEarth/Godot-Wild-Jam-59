@@ -5,8 +5,8 @@ signal money_gained(money:int)
 @export var point_value:int = 5
 @export var bonus_multiplyer:float = 3.0
 @export var money_value = 3
-@onready var bump = $"../AudioStreamPlayer2D"
-
+@onready var drop_off = $"../drop off" 
+@onready var pickup = $"../pickup"
 func _ready():
 	pass # Replace with function body.
 
@@ -18,11 +18,12 @@ func manage_passengers(area):
 	
 	for passenger in get_children():
 		if not passenger.visible:
-			bump.play()
+			drop_off.play()
 			passenger.visible = true
 			passenger.modulate = stations.pick_random().modulate
 			emit_signal("money_gained",money_value)
 		if passenger.modulate == area.get_parent().modulate:
+			pickup.play()
 			color_matches+=1
 			emit_signal("points_gained",point_value)
 			passenger.visible = false

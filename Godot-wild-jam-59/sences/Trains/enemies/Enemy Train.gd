@@ -8,7 +8,7 @@ var target_pos:Vector2
 
 func _ready():
 	randomize()
-	for i in range(2):
+	for i in randi_range(3,10):
 		train_head.add_cart()
 	pass # Replace with function body.
 
@@ -28,15 +28,18 @@ func sensor():
 	for ray in rays:
 		if ray is RayCast2D:
 			if ray.is_colliding()==true:
-				if ray.get_collider() is Train_Cart:
+				if ray.get_collider() is Train_Cart and ray.get_collider().get_parent().get_node("Train head") != train_head:
 					results.append(Train_Cart)
 				
-				elif ray.get_collider() is Train_Head:
+				elif ray.get_collider() is Train_Head and ray.get_collider() != train_head:
 					results.append(Train_Head)
 				
 				elif ray.get_collider() is TileMap or ray.get_collider().get_parent() is Train_Station:
-					results.append(StaticBody2D)
-				
+					if ray.get_collider().is_in_group("entrance"):
+						results.append(Area2D)
+					else:
+						results.append(StaticBody2D)
+					
 				else:
 					results.append(null)
 			else:
@@ -47,8 +50,9 @@ func state_manager():
 	var colliders = sensor()
 	
 	active_state = train_states.WONDER
-	
-	if colliders.has(Train_Cart) or colliders.has(Train_Head):
+
+		
+	if colliders.has(Train_Cart) or colliders.has(Train_Head) or colliders.has(Area2D):
 		active_state = train_states.CHASE
 		
 		if colliders[2] == Train_Cart:
@@ -78,9 +82,9 @@ func state_machine(delta):
 			var colliders = sensor()
 			train_head.rotation_direction = 0
 			if colliders[0] == Train_Cart: train_head.rotation_direction = -1
-			if colliders[1] == Train_Cart: train_head.rotation_direction = -.1
+			if colliders[1] == Train_Cart: train_head.rotation_direction = -0.1
 			if colliders[2] == Train_Cart: train_head.rotation_direction = 0
-			if colliders[3] == Train_Cart: train_head.rotation_direction = .1
+			if colliders[3] == Train_Cart: train_head.rotation_direction = 0.1
 			if colliders[4] == Train_Cart: train_head.rotation_direction = 1
 			
 			train_head.rotation = train_head.rotation+(train_head.rotation_direction*train_head.rotation_speed*delta)
@@ -90,15 +94,15 @@ func state_machine(delta):
 		train_states.AVOID:
 			var colliders = sensor()
 			train_head.rotation_direction = 0
-			if colliders[0] == StaticBody2D: train_head.rotation_direction = .1
+			if colliders[0] == StaticBody2D: train_head.rotation_direction = 0.1
 			if colliders[1] == StaticBody2D: train_head.rotation_direction = 1
 
 			if colliders[3] == StaticBody2D: train_head.rotation_direction = -1
-			if colliders[4] == StaticBody2D: train_head.rotation_direction = -.1
+			if colliders[4] == StaticBody2D: train_head.rotation_direction = -0.1
 
 			if colliders[2] == StaticBody2D: train_head.rotation_direction = randi_range(-1,1) + train_head.rotation_direction * 5
 
-			train_head.rotation_direction = look_dir
+#			train_head.rotation_direction = look_dir
 			train_head.rotation = train_head.rotation+(train_head.rotation_direction*train_head.rotation_speed*delta)
 			pass
 #	print("Looking at: "+str(look_dir))
