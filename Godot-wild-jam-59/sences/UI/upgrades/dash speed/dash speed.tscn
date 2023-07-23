@@ -12,8 +12,6 @@ offset_bottom = 125.0
 script = ExtResource("1_wrs81")
 
 [node name="upgrade_button" parent="." instance=ExtResource("2_pcjp8")]
-texture_filter = 1
-custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 size_flags_horizontal = 1
 texture_normal = ExtResource("3_jovnd")

@@ -98,7 +98,7 @@ func move_arc(delta):
 	position += velocity
 	
 func move_straight(_delta):
-	new_velocity = (Vector2.UP.rotated(rotation) * (speed + (0 if !is_dashing else dash_speed))) 
+	new_velocity = (Vector2.UP.rotated(global_rotation) * (speed + (0 if !is_dashing else dash_speed))) 
 	set_velocity(new_velocity)
 	move_and_slide()
 	new_velocity=velocity

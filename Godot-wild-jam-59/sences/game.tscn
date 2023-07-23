@@ -655,6 +655,12 @@ position = Vector2(3173, 581)
 
 [node name="Enemy Train2" parent="." instance=ExtResource("3_1icv6")]
 position = Vector2(351, 956)
+position = Vector2(2486, 1349)
+rotation = 0.523598
+
+[node name="Enemy Train2" parent="." instance=ExtResource("3_1icv6")]
+position = Vector2(1089, 1403)
+rotation = -0.523598
 
 [node name="Enemy Train3" parent="." instance=ExtResource("3_1icv6")]
 position = Vector2(1242, 1745)
@@ -664,3 +670,5 @@ position = Vector2(2397, 1721)
 
 [node name="Enemy Train5" parent="." instance=ExtResource("3_1icv6")]
 position = Vector2(3239, 1673)
+position = Vector2(2265, 1934)
+rotation = 2.35619

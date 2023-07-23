@@ -9,6 +9,10 @@ script = ExtResource("1_khb3y")
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
+[node name="UpgradeTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
 [node name="dead carts" type="Node2D" parent="."]
 
 [node name="Train head" parent="." instance=ExtResource("1_s8jih")]
@@ -42,3 +46,5 @@ position = Vector2(0, 45)
 rotation = 0.523598
 target_position = Vector2(0, -500)
 hit_from_inside = true
+
+[connection signal="timeout" from="UpgradeTimer" to="." method="_on_upgrade_timer_timeout"]

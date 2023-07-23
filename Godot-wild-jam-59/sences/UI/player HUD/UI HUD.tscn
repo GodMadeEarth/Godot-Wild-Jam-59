@@ -24,7 +24,6 @@ grow_vertical = 2
 script = ExtResource("1_yabby")
 
 [node name="purchest window" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 0
 offset_left = 416.0
