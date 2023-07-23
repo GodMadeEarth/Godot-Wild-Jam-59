@@ -1,18 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://uvh015smr05p"]
+[gd_scene load_steps=3 format=3 uid="uid://uvh015smr05p"]
 
 [ext_resource type="Script" path="res://sences/Trains/Train.gd" id="1_6jy5h"]
 [ext_resource type="Texture2D" uid="uid://264whlywxj80" path="res://assets/trains/traintrain4.png" id="2_rqfeq"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u0kt4"]
-rough = true
-bounce = 1.0
-absorbent = true
 
 [node name="Train head" type="CharacterBody2D"]
 position = Vector2(9, 35)
 motion_mode = 1
 script = ExtResource("1_6jy5h")
 cart_spacing = 30
+metadata/_edit_vertical_guides_ = [-80.0]
+metadata/_edit_horizontal_guides_ = [88.0]
 
 [node name="ramming effect" type="Polygon2D" parent="."]
 visible = false
@@ -38,11 +35,12 @@ polygon = PackedVector2Array(0, -8.34042, 0, 50.0425, 24, 50.0425, 24, -8.34042)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-8, 49)
-polygon = PackedVector2Array(-7.99997, -18, -7.99997, 7, 24, 7, 24, -18, 8.00003, -41)
+polygon = PackedVector2Array(-7.99997, -18, -7, 4, 7.94552, 7, 24, 4, 24, -18, 8.00003, -41)
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
 position = Vector2(2.89679e-05, 70)
 node_a = NodePath("..")
+disable_collision = false
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 visible = false
@@ -53,12 +51,6 @@ polygon = PackedVector2Array(8.00003, -49, 2.86102e-05, -41, -7.99997, -25, -7.9
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(2.89679e-05, 0, -7.99997, 8, -16, 24, 2.89679e-05, 1, 16, 24, 8.00003, 8)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-physics_material_override = SubResource("PhysicsMaterial_u0kt4")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(-16, 59, -16, 57, 16, 57, 16, 59, 2.89679e-05, 64)
 
 [node name="dash_timer" type="Timer" parent="."]
 one_shot = true

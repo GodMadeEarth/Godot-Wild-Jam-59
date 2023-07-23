@@ -104,3 +104,16 @@ func state_machine(delta):
 #	print("Looking at: "+str(look_dir))
 #	print("Current state: "+str(active_state))
 	pass
+
+
+
+func _on_upgrade_timer_timeout():
+	var upgrade = randi_range(1,6)
+	if upgrade == 1: train_head.rotationStats["Total Purchaces"] += 1
+	elif upgrade == 2: train_head.speedStats["Total Purchaces"] += 1
+	elif upgrade == 3: train_head.dashDuriationStats["Total Purchaces"] += 1
+	elif upgrade == 4: train_head.dashCooldownStats["Total Purchaces"] += 1
+	elif upgrade == 5: train_head.dashSpeedStats["Total Purchaces"] += 1
+	elif upgrade == 6: train_head.trainLenghtStats["Total Purchaces"] += 1
+
+	print(9)
