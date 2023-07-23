@@ -1,6 +1,6 @@
 extends Node2D
 @onready var train_head:Train_Head = $"Train head"
-@onready var ray:RayCast2D = $"Train head/RayCast2D"
+@onready var rays:Array[Node] = $"Train head".get_children()
 # Called when the node enters the scene tree for the first time.
 enum train_states {WONDER,CHASE,DASH,AVOID}
 var active_state:train_states = train_states.WONDER
@@ -24,26 +24,43 @@ func _physics_process(delta):
 	pass
 
 func sensor():
-	if ray.is_colliding()==true:
-		return ray.get_collider()
-	else:
-		return null
+	var results = []
+	for ray in rays:
+		if ray is RayCast2D:
+			if ray.is_colliding()==true:
+				if ray.get_collider() is Train_Cart:
+					results.append(Train_Cart)
+				
+				elif ray.get_collider() is Train_Head:
+					results.append(Train_Head)
+				
+				elif ray.get_collider() is TileMap or ray.get_collider().get_parent() is Train_Station:
+					results.append(StaticBody2D)
+				
+				else:
+					results.append(null)
+			else:
+				results.append(null)
+	return results
 	
 func state_manager():
-	var collider = sensor()
-	if collider:
-		if collider is Train_Cart:
+	var colliders = sensor()
+	
+	active_state = train_states.WONDER
+	
+	if colliders.has(Train_Cart) or colliders.has(Train_Head):
+		active_state = train_states.CHASE
+		
+		if colliders[2] == Train_Cart:
 			active_state = train_states.DASH
-		elif collider is Train_Station or collider is Train_Head:
-			active_state = train_states.CHASE
-		elif sensor() is StaticBody2D:
-			active_state = train_states.WONDER
-	elif collider == null:
-		active_state = train_states.WONDER
-	pass
+	
+	if colliders.has(StaticBody2D):
+		active_state = train_states.AVOID
+		
 	
 	
-	
+
+
 func state_machine(delta):
 	var look_dir = 0
 	match active_state:
